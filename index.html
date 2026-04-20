@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuadifySoft</title>
-    <meta name="description" content="QuadifySoft builds custom software, AI systems, and automation solutions for modern businesses.">
+    <meta name="description" content="QuadifySoft builds custom software, AI systems, cloud platforms, and automation solutions for modern businesses.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,14 +13,15 @@
     <div class="hero-bg-grid"></div>
 
     <nav class="navbar container">
-        <div class="logo-wrap">
-            <div class="logo-mark">Q</div>
+        <a href="#home" class="logo-wrap">
+            <img src="logo.png" alt="QuadifySoft logo" class="logo-image">
             <div class="logo-text">QuadifySoft</div>
-        </div>
+        </a>
 
         <div class="nav-links">
             <a href="#home" data-lang="nav_home">Home</a>
             <a href="#services" data-lang="nav_services">Services</a>
+            <a href="#projects" data-lang="nav_projects">Projects</a>
             <a href="#why-us" data-lang="nav_why">Why us</a>
             <a href="#about" data-lang="nav_about">About</a>
             <a href="#contact" data-lang="nav_contact">Contact</a>
@@ -39,16 +40,16 @@
             <div class="hero-left">
                 <p class="eyebrow" data-lang="hero_label">SOFTWARE COMPANY</p>
 
-                <h1 data-lang="hero_title">Custom Software. AI Systems. Automation.</h1>
+                <h1 data-lang="hero_title">Custom Software. AI Systems. Cloud Platforms.</h1>
 
                 <p class="subtitle" data-lang="hero_sub">
                     We build serious digital products for companies that want stronger workflows,
-                    better efficiency, and scalable systems built around real business needs.
+                    better efficiency, scalable systems, and modern infrastructure built around real business needs.
                 </p>
 
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary" data-lang="hero_btn1">Start a Conversation</a>
-                    <a href="#services" class="btn btn-secondary" data-lang="hero_btn2">Explore Services</a>
+                    <a href="#projects" class="btn btn-secondary" data-lang="hero_btn2">See Selected Work</a>
                 </div>
             </div>
 
@@ -72,12 +73,12 @@
 
                         <div class="metric-card">
                             <div class="metric-value">03</div>
-                            <div class="metric-text" data-lang="metric_3">Automation & integration</div>
+                            <div class="metric-text" data-lang="metric_3">Cloud platforms & integrations</div>
                         </div>
 
                         <div class="metric-card">
                             <div class="metric-value">04</div>
-                            <div class="metric-text" data-lang="metric_4">Scalable digital infrastructure</div>
+                            <div class="metric-text" data-lang="metric_4">B2B / B2C operations</div>
                         </div>
                     </div>
                 </div>
@@ -127,16 +128,66 @@
 
             <article class="info-card">
                 <div class="card-number">03</div>
-                <h3 data-lang="card3_title">Automation</h3>
+                <h3 data-lang="card3_title">Cloud Platforms</h3>
                 <p data-lang="card3_desc">
-                    We automate repetitive workflows, connect systems, and eliminate friction from operations.
+                    Scalable cloud environments, connected business modules, and modern web infrastructure for growing operations.
                 </p>
             </article>
         </div>
     </div>
 </section>
 
-<section class="section section-dark" id="why-us">
+<section class="section section-dark" id="projects">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-label" data-lang="projects_label">SELECTED WORK</p>
+            <h2 data-lang="projects_title">Examples of systems we build</h2>
+            <p data-lang="projects_desc">
+                A selection of solution types, platforms, and business systems designed around real operational needs.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+            <article class="project-card featured-project">
+                <div class="project-type" data-lang="project1_type">AI / Inquiry Automation</div>
+                <h3 data-lang="project1_title">AI inquiry processing and response drafting system</h3>
+                <p data-lang="project1_desc">
+                    A system for collecting inbound requests, extracting key information, structuring inquiries, and helping teams prepare fast and consistent responses.
+                </p>
+                <span class="project-tag" data-lang="project1_tag">AI System</span>
+            </article>
+
+            <article class="project-card">
+                <div class="project-type" data-lang="project2_type">Documents / Tracking</div>
+                <h3 data-lang="project2_title">QR-based document and label management platform</h3>
+                <p data-lang="project2_desc">
+                    A custom solution for creating, tracking, printing, and auditing labeled documents and internal records through QR workflows.
+                </p>
+                <span class="project-tag" data-lang="project2_tag">Internal Operations</span>
+            </article>
+
+            <article class="project-card">
+                <div class="project-type" data-lang="project3_type">Betting / Platform</div>
+                <h3 data-lang="project3_title">End-to-end platform for betting operations</h3>
+                <p data-lang="project3_desc">
+                    A complete platform concept covering administration, operational workflows, user-facing logic, and scalable back-office processes.
+                </p>
+                <span class="project-tag" data-lang="project3_tag">Platform System</span>
+            </article>
+
+            <article class="project-card">
+                <div class="project-type" data-lang="project4_type">Cloud / B2B / B2C</div>
+                <h3 data-lang="project4_title">Cloud business platform with B2B and B2C modules</h3>
+                <p data-lang="project4_desc">
+                    A cloud system covering products, invoices, dispatch notes, catalog structure, item variants, colors, sizes, and multi-channel business workflows.
+                </p>
+                <span class="project-tag" data-lang="project4_tag">Cloud ERP Platform</span>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="why-us">
     <div class="container">
         <div class="section-heading narrow">
             <p class="section-label" data-lang="why_label">WHY COMPANIES CHOOSE US</p>
@@ -170,7 +221,7 @@
     </div>
 </section>
 
-<section class="section" id="process">
+<section class="section section-dark" id="process">
     <div class="container">
         <div class="section-heading">
             <p class="section-label" data-lang="process_label">PROCESS</p>
@@ -208,7 +259,7 @@
     </div>
 </section>
 
-<section class="section section-dark" id="about">
+<section class="section" id="about">
     <div class="container about-grid">
         <div class="about-text">
             <p class="section-label" data-lang="about_label">ABOUT</p>
@@ -248,7 +299,7 @@
                 <h2 data-lang="contact_title">Let’s build something valuable</h2>
                 <p data-lang="contact_desc">
                     If you are looking for a serious software partner for custom systems,
-                    AI tools, or business automation, QuadifySoft is ready to talk.
+                    AI tools, cloud platforms, or business automation, QuadifySoft is ready to talk.
                 </p>
             </div>
 
@@ -269,11 +320,12 @@
     <div class="container footer-inner">
         <div>
             <div class="footer-brand">QuadifySoft</div>
-            <p class="footer-copy" data-lang="footer_copy">Custom software, AI systems, and business automation.</p>
+            <p class="footer-copy" data-lang="footer_copy">Custom software, AI systems, cloud platforms, and business automation.</p>
         </div>
 
         <div class="footer-links">
             <a href="#services" data-lang="nav_services">Services</a>
+            <a href="#projects" data-lang="nav_projects">Projects</a>
             <a href="#about" data-lang="nav_about">About</a>
             <a href="#contact" data-lang="nav_contact">Contact</a>
         </div>
@@ -285,23 +337,24 @@ const translations = {
     en: {
         nav_home: "Home",
         nav_services: "Services",
+        nav_projects: "Projects",
         nav_why: "Why us",
         nav_about: "About",
         nav_contact: "Contact",
 
         hero_badge: "SERIOUS SOFTWARE FOR SERIOUS BUSINESSES",
         hero_label: "SOFTWARE COMPANY",
-        hero_title: "Custom Software. AI Systems. Automation.",
-        hero_sub: "We build serious digital products for companies that want stronger workflows, better efficiency, and scalable systems built around real business needs.",
+        hero_title: "Custom Software. AI Systems. Cloud Platforms.",
+        hero_sub: "We build serious digital products for companies that want stronger workflows, better efficiency, scalable systems, and modern infrastructure built around real business needs.",
         hero_btn1: "Start a Conversation",
-        hero_btn2: "Explore Services",
+        hero_btn2: "See Selected Work",
 
         panel_label: "FOCUS",
         panel_status: "Long-term value",
         metric_1: "Custom business systems",
         metric_2: "AI-powered workflows",
-        metric_3: "Automation & integration",
-        metric_4: "Scalable digital infrastructure",
+        metric_3: "Cloud platforms & integrations",
+        metric_4: "B2B / B2C operations",
 
         intro_1: "Custom-built solutions",
         intro_2: "Business automation",
@@ -314,12 +367,34 @@ const translations = {
 
         card1_title: "Custom Business Software",
         card1_desc: "Internal tools, portals, admin panels, and operational systems tailored to real business processes.",
-
         card2_title: "AI Systems",
         card2_desc: "AI assistants, inquiry handling, intelligent workflows, and internal process support tools.",
+        card3_title: "Cloud Platforms",
+        card3_desc: "Scalable cloud environments, connected business modules, and modern web infrastructure for growing operations.",
 
-        card3_title: "Automation",
-        card3_desc: "We automate repetitive workflows, connect systems, and eliminate friction from operations.",
+        projects_label: "SELECTED WORK",
+        projects_title: "Examples of systems we build",
+        projects_desc: "A selection of solution types, platforms, and business systems designed around real operational needs.",
+
+        project1_type: "AI / Inquiry Automation",
+        project1_title: "AI inquiry processing and response drafting system",
+        project1_desc: "A system for collecting inbound requests, extracting key information, structuring inquiries, and helping teams prepare fast and consistent responses.",
+        project1_tag: "AI System",
+
+        project2_type: "Documents / Tracking",
+        project2_title: "QR-based document and label management platform",
+        project2_desc: "A custom solution for creating, tracking, printing, and auditing labeled documents and internal records through QR workflows.",
+        project2_tag: "Internal Operations",
+
+        project3_type: "Betting / Platform",
+        project3_title: "End-to-end platform for betting operations",
+        project3_desc: "A complete platform concept covering administration, operational workflows, user-facing logic, and scalable back-office processes.",
+        project3_tag: "Platform System",
+
+        project4_type: "Cloud / B2B / B2C",
+        project4_title: "Cloud business platform with B2B and B2C modules",
+        project4_desc: "A cloud system covering products, invoices, dispatch notes, catalog structure, item variants, colors, sizes, and multi-channel business workflows.",
+        project4_tag: "Cloud ERP Platform",
 
         why_label: "WHY COMPANIES CHOOSE US",
         why_title: "Technology is only valuable when it solves the right problem",
@@ -360,33 +435,34 @@ const translations = {
 
         contact_label: "CONTACT",
         contact_title: "Let’s build something valuable",
-        contact_desc: "If you are looking for a serious software partner for custom systems, AI tools, or business automation, QuadifySoft is ready to talk.",
+        contact_desc: "If you are looking for a serious software partner for custom systems, AI tools, cloud platforms, or business automation, QuadifySoft is ready to talk.",
         contact_note: "Open for project discussions, custom software inquiries, and long-term business collaboration.",
         contact_btn: "Send an Email",
 
-        footer_copy: "Custom software, AI systems, and business automation."
+        footer_copy: "Custom software, AI systems, cloud platforms, and business automation."
     },
 
     sr: {
         nav_home: "Početna",
         nav_services: "Usluge",
+        nav_projects: "Projekti",
         nav_why: "Zašto mi",
         nav_about: "O nama",
         nav_contact: "Kontakt",
 
         hero_badge: "OZBILJAN SOFTVER ZA OZBILJNE FIRME",
         hero_label: "SOFTVERSKA FIRMA",
-        hero_title: "Softver po meri. AI sistemi. Automatizacija.",
-        hero_sub: "Pravimo ozbiljna digitalna rešenja za kompanije koje žele jače procese, veću efikasnost i skalabilne sisteme prilagođene realnim poslovnim potrebama.",
+        hero_title: "Softver po meri. AI sistemi. Cloud platforme.",
+        hero_sub: "Pravimo ozbiljna digitalna rešenja za kompanije koje žele jače procese, veću efikasnost, skalabilne sisteme i modernu infrastrukturu prilagođenu realnim poslovnim potrebama.",
         hero_btn1: "Započnimo razgovor",
-        hero_btn2: "Pogledaj usluge",
+        hero_btn2: "Pogledaj projekte",
 
         panel_label: "FOKUS",
         panel_status: "Dugoročna vrednost",
         metric_1: "Poslovni sistemi po meri",
         metric_2: "AI radni tokovi",
-        metric_3: "Automatizacija i integracije",
-        metric_4: "Skalabilna digitalna infrastruktura",
+        metric_3: "Cloud platforme i integracije",
+        metric_4: "B2B / B2C operacije",
 
         intro_1: "Rešenja po meri",
         intro_2: "Automatizacija poslovanja",
@@ -399,12 +475,34 @@ const translations = {
 
         card1_title: "Poslovni softver po meri",
         card1_desc: "Interni alati, portali, admin paneli i operativni sistemi prilagođeni stvarnim poslovnim procesima.",
-
         card2_title: "AI sistemi",
         card2_desc: "AI asistenti, obrada upita, pametni radni tokovi i alati za podršku internim procesima.",
+        card3_title: "Cloud platforme",
+        card3_desc: "Skalabilna cloud okruženja, povezani poslovni moduli i moderna web infrastruktura za rastuće operacije.",
 
-        card3_title: "Automatizacija",
-        card3_desc: "Automatizujemo ponavljajuće procese, povezujemo sisteme i uklanjamo uska grla u radu.",
+        projects_label: "IZDVOJENI RADOVI",
+        projects_title: "Primeri sistema koje gradimo",
+        projects_desc: "Izbor tipova rešenja, platformi i poslovnih sistema dizajniranih oko stvarnih operativnih potreba.",
+
+        project1_type: "AI / Automatizacija upita",
+        project1_title: "AI sistem za obradu upita i pripremu odgovora",
+        project1_desc: "Sistem za prikupljanje ulaznih zahteva, izdvajanje ključnih informacija, strukturiranje upita i pomoć timovima da pripreme brze i ujednačene odgovore.",
+        project1_tag: "AI sistem",
+
+        project2_type: "Dokumenti / Praćenje",
+        project2_title: "QR platforma za dokumente i upravljanje etiketama",
+        project2_desc: "Custom rešenje za kreiranje, praćenje, štampu i audit označenih dokumenata i internih zapisa kroz QR tokove rada.",
+        project2_tag: "Interne operacije",
+
+        project3_type: "Kladionica / Platforma",
+        project3_title: "Kompletna platforma za operacije kladionice",
+        project3_desc: "Celoviti platformski koncept koji pokriva administraciju, operativne tokove, korisničku logiku i skalabilne back-office procese.",
+        project3_tag: "Platformski sistem",
+
+        project4_type: "Cloud / B2B / B2C",
+        project4_title: "Cloud poslovna platforma sa B2B i B2C modulima",
+        project4_desc: "Cloud sistem koji pokriva artikle, fakture, otpremnice, strukturu kataloga, varijante artikala, boje, veličine i višekanalne poslovne procese.",
+        project4_tag: "Cloud ERP platforma",
 
         why_label: "ZAŠTO FIRME BIRAJU NAS",
         why_title: "Tehnologija vredi samo kada rešava pravi problem",
@@ -445,11 +543,11 @@ const translations = {
 
         contact_label: "KONTAKT",
         contact_title: "Hajde da napravimo nešto vredno",
-        contact_desc: "Ako tražite ozbiljnog softverskog partnera za custom sisteme, AI alate ili automatizaciju poslovanja, QuadifySoft je spreman za razgovor.",
+        contact_desc: "Ako tražite ozbiljnog softverskog partnera za custom sisteme, AI alate, cloud platforme ili automatizaciju poslovanja, QuadifySoft je spreman za razgovor.",
         contact_note: "Otvoreni smo za razgovore o projektima, izradi softvera po meri i dugoročnoj poslovnoj saradnji.",
         contact_btn: "Pošalji email",
 
-        footer_copy: "Softver po meri, AI sistemi i automatizacija poslovanja."
+        footer_copy: "Softver po meri, AI sistemi, cloud platforme i automatizacija poslovanja."
     }
 };
 
