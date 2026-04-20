@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuadifySoft</title>
     <meta name="description" content="QuadifySoft builds custom software, AI systems, cloud platforms, and automation solutions for modern businesses.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +16,13 @@
 
     <nav class="navbar container">
         <a href="#home" class="logo-wrap">
-            <img src="logo.png" alt="QuadifySoft logo" class="logo-image">
-            <div class="logo-text">QuadifySoft</div>
+            <div class="logo-badge">
+                <img src="logo.png" alt="QuadifySoft logo" class="logo-image">
+            </div>
+            <div class="logo-text-wrap">
+                <div class="logo-text">QuadifySoft</div>
+                <div class="logo-subtext" data-lang="logo_subtext">Software • AI • Cloud</div>
+            </div>
         </a>
 
         <div class="nav-links">
@@ -265,7 +272,7 @@
             <p class="section-label" data-lang="about_label">ABOUT</p>
             <h2 data-lang="about_title">Built for companies that want more than a generic solution</h2>
             <p data-lang="about_desc1">
-                QuadifySoft is focused on building software that solves real business problems — not just making interfaces that look good.
+                QuadifySoft is focused on building software that solves real business problems - not just making interfaces that look good.
             </p>
             <p data-lang="about_desc2">
                 Our goal is to create systems that bring structure, speed, clarity, and long-term value to teams and operations.
@@ -335,6 +342,7 @@
 <script>
 const translations = {
     en: {
+        logo_subtext: "Software • AI • Cloud",
         nav_home: "Home",
         nav_services: "Services",
         nav_projects: "Projects",
@@ -423,7 +431,7 @@ const translations = {
 
         about_label: "ABOUT",
         about_title: "Built for companies that want more than a generic solution",
-        about_desc1: "QuadifySoft is focused on building software that solves real business problems — not just making interfaces that look good.",
+        about_desc1: "QuadifySoft is focused on building software that solves real business problems - not just making interfaces that look good.",
         about_desc2: "Our goal is to create systems that bring structure, speed, clarity, and long-term value to teams and operations.",
 
         about_p1_title: "Serious approach",
@@ -443,6 +451,7 @@ const translations = {
     },
 
     sr: {
+        logo_subtext: "Softver • AI • Cloud",
         nav_home: "Početna",
         nav_services: "Usluge",
         nav_projects: "Projekti",
@@ -531,7 +540,7 @@ const translations = {
 
         about_label: "O NAMA",
         about_title: "Pravljeno za firme koje žele više od generičkog rešenja",
-        about_desc1: "QuadifySoft je fokusiran na razvoj softvera koji rešava stvarne poslovne probleme — ne samo na interfejse koji lepo izgledaju.",
+        about_desc1: "QuadifySoft je fokusiran na razvoj softvera koji rešava stvarne poslovne probleme - ne samo na interfejse koji lepo izgledaju.",
         about_desc2: "Naš cilj je da pravimo sisteme koji donose strukturu, brzinu, jasnoću i dugoročnu vrednost timovima i operacijama.",
 
         about_p1_title: "Ozbiljan pristup",
@@ -568,7 +577,7 @@ function setLang(lang) {
 }
 
 window.onload = () => {
-    const savedLang = localStorage.getItem('lang') || 'en';
+    const savedLang = localStorage.setItem('lang') || 'en';
     setLang(savedLang);
 };
 </script>
