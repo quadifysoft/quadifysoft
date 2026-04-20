@@ -587,7 +587,7 @@ function setLang(lang) {
 }
 
 window.onload = () => {
-    const savedLang = localStorage.setItem('lang') || 'en';
+    const savedLang = localStorage.getItem('lang') || 'sr';
     setLang(savedLang);
 };
 </script>
