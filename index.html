@@ -8,139 +8,472 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero" id="home">
-        <nav class="navbar container">
-            <div class="logo">QuadifySoft</div>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+<header class="hero" id="home">
+    <div class="hero-bg-grid"></div>
 
-        <div class="hero-content container">
-            <p class="eyebrow">SOFTWARE COMPANY</p>
-            <h1>Custom Software. AI Systems. Automation.</h1>
-            <p class="subtitle">
-                We build serious digital products for companies that want better workflows,
-                more efficiency, and scalable business systems.
-            </p>
+    <nav class="navbar container">
+        <div class="logo-wrap">
+            <div class="logo-mark">Q</div>
+            <div class="logo-text">QuadifySoft</div>
+        </div>
 
-            <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">Let’s Work Together</a>
-                <a href="#services" class="btn btn-secondary">Explore Services</a>
+        <div class="nav-links">
+            <a href="#home" data-lang="nav_home">Home</a>
+            <a href="#services" data-lang="nav_services">Services</a>
+            <a href="#why-us" data-lang="nav_why">Why us</a>
+            <a href="#about" data-lang="nav_about">About</a>
+            <a href="#contact" data-lang="nav_contact">Contact</a>
+
+            <div class="lang-switch">
+                <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+                <button type="button" id="btn-sr" onclick="setLang('sr')">SR</button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="intro-strip">
-            <div class="container intro-strip-inner">
-                <div class="intro-item">
-                    <span>Custom-built solutions</span>
-                </div>
-                <div class="intro-item">
-                    <span>Business automation</span>
-                </div>
-                <div class="intro-item">
-                    <span>AI-powered workflows</span>
-                </div>
-                <div class="intro-item">
-                    <span>Serious long-term systems</span>
-                </div>
-            </div>
-        </section>
+    <div class="hero-content container">
+        <div class="hero-badge" data-lang="hero_badge">SERIOUS SOFTWARE FOR SERIOUS BUSINESSES</div>
 
-        <section class="section" id="services">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-label">SERVICES</p>
-                    <h2>What we build</h2>
-                    <p>
-                        We focus on practical software solutions that improve operations,
-                        reduce manual work, and help companies scale with confidence.
-                    </p>
-                </div>
+        <div class="hero-grid">
+            <div class="hero-left">
+                <p class="eyebrow" data-lang="hero_label">SOFTWARE COMPANY</p>
 
-                <div class="cards-grid">
-                    <article class="info-card">
-                        <div class="card-number">01</div>
-                        <h3>Custom Business Software</h3>
-                        <p>
-                            Internal tools, portals, admin panels, and operational systems
-                            tailored to real business processes.
-                        </p>
-                    </article>
+                <h1 data-lang="hero_title">Custom Software. AI Systems. Automation.</h1>
 
-                    <article class="info-card">
-                        <div class="card-number">02</div>
-                        <h3>AI Systems</h3>
-                        <p>
-                            AI assistants, inquiry handling, internal knowledge workflows,
-                            and process support tools designed for real teams.
-                        </p>
-                    </article>
+                <p class="subtitle" data-lang="hero_sub">
+                    We build serious digital products for companies that want stronger workflows,
+                    better efficiency, and scalable systems built around real business needs.
+                </p>
 
-                    <article class="info-card">
-                        <div class="card-number">03</div>
-                        <h3>Automation</h3>
-                        <p>
-                            We automate repetitive workflows, connect systems, and remove
-                            friction from daily operations.
-                        </p>
-                    </article>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary" data-lang="hero_btn1">Start a Conversation</a>
+                    <a href="#services" class="btn btn-secondary" data-lang="hero_btn2">Explore Services</a>
                 </div>
             </div>
-        </section>
 
-        <section class="section section-dark" id="about">
-            <div class="container about-grid">
-                <div class="about-text">
-                    <p class="section-label">ABOUT</p>
-                    <h2>Built for companies that want more than a generic solution</h2>
-                    <p>
-                        QuadifySoft is focused on building software that solves real business
-                        problems - not just making interfaces that look good.
-                    </p>
-                    <p>
-                        Our goal is to create systems that bring structure, speed, clarity,
-                        and long-term value to teams and operations.
-                    </p>
-                </div>
-
-                <div class="about-panel">
-                    <div class="about-point">
-                        <h3>Serious approach</h3>
-                        <p>We build with long-term stability, structure, and business logic in mind.</p>
+            <div class="hero-right">
+                <div class="hero-panel">
+                    <div class="panel-top">
+                        <span class="panel-label" data-lang="panel_label">FOCUS</span>
+                        <span class="panel-status" data-lang="panel_status">Long-term value</span>
                     </div>
 
-                    <div class="about-point">
-                        <h3>Business-first thinking</h3>
-                        <p>Every feature should have a purpose, measurable value, and practical use.</p>
-                    </div>
+                    <div class="hero-metrics">
+                        <div class="metric-card">
+                            <div class="metric-value">01</div>
+                            <div class="metric-text" data-lang="metric_1">Custom business systems</div>
+                        </div>
 
-                    <div class="about-point">
-                        <h3>Modern execution</h3>
-                        <p>Clean UX, scalable architecture, and room for future growth.</p>
+                        <div class="metric-card">
+                            <div class="metric-value">02</div>
+                            <div class="metric-text" data-lang="metric_2">AI-powered workflows</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value">03</div>
+                            <div class="metric-text" data-lang="metric_3">Automation & integration</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value">04</div>
+                            <div class="metric-text" data-lang="metric_4">Scalable digital infrastructure</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</header>
 
-        <section class="section" id="contact">
-            <div class="container contact-box">
-                <p class="section-label">CONTACT</p>
-                <h2>Let’s build something valuable</h2>
-                <p>
+<main>
+
+<section class="intro-strip">
+    <div class="container intro-strip-inner">
+        <div class="intro-item" data-lang="intro_1">Custom-built solutions</div>
+        <div class="intro-item" data-lang="intro_2">Business automation</div>
+        <div class="intro-item" data-lang="intro_3">AI-powered workflows</div>
+        <div class="intro-item" data-lang="intro_4">Long-term digital systems</div>
+    </div>
+</section>
+
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-label" data-lang="services_label">SERVICES</p>
+            <h2 data-lang="services_title">What we build</h2>
+            <p data-lang="services_desc">
+                We focus on practical software solutions that improve operations,
+                reduce manual work, and help companies scale with confidence.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <article class="info-card">
+                <div class="card-number">01</div>
+                <h3 data-lang="card1_title">Custom Business Software</h3>
+                <p data-lang="card1_desc">
+                    Internal tools, portals, admin panels, and operational systems tailored to real business processes.
+                </p>
+            </article>
+
+            <article class="info-card">
+                <div class="card-number">02</div>
+                <h3 data-lang="card2_title">AI Systems</h3>
+                <p data-lang="card2_desc">
+                    AI assistants, inquiry handling, intelligent workflows, and internal process support tools.
+                </p>
+            </article>
+
+            <article class="info-card">
+                <div class="card-number">03</div>
+                <h3 data-lang="card3_title">Automation</h3>
+                <p data-lang="card3_desc">
+                    We automate repetitive workflows, connect systems, and eliminate friction from operations.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark" id="why-us">
+    <div class="container">
+        <div class="section-heading narrow">
+            <p class="section-label" data-lang="why_label">WHY COMPANIES CHOOSE US</p>
+            <h2 data-lang="why_title">Technology is only valuable when it solves the right problem</h2>
+            <p data-lang="why_desc">
+                We do not build generic solutions just to fill screens. We build systems that help businesses move faster, operate better, and grow with less friction.
+            </p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <h3 data-lang="why1_title">Business-first thinking</h3>
+                <p data-lang="why1_desc">Every feature must have a clear role, practical value, and business purpose.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-lang="why2_title">Long-term structure</h3>
+                <p data-lang="why2_desc">We aim for systems that can evolve over time, not quick fixes that break later.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-lang="why3_title">Modern execution</h3>
+                <p data-lang="why3_desc">Clean UX, reliable architecture, and serious attention to implementation quality.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-lang="why4_title">Real efficiency</h3>
+                <p data-lang="why4_desc">The goal is to save time, reduce manual work, and create measurable operational value.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="process">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-label" data-lang="process_label">PROCESS</p>
+            <h2 data-lang="process_title">How we approach projects</h2>
+            <p data-lang="process_desc">
+                We keep the process clear, practical, and aligned with real business needs from the first conversation to the final system.
+            </p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-step">01</div>
+                <h3 data-lang="process1_title">Understand the business</h3>
+                <p data-lang="process1_desc">We first understand the workflow, bottlenecks, and actual business needs.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-step">02</div>
+                <h3 data-lang="process2_title">Define the right solution</h3>
+                <p data-lang="process2_desc">We shape the system around real value, not around unnecessary complexity.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-step">03</div>
+                <h3 data-lang="process3_title">Build with structure</h3>
+                <p data-lang="process3_desc">We develop with clarity, scalability, and long-term stability in mind.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-step">04</div>
+                <h3 data-lang="process4_title">Improve and expand</h3>
+                <p data-lang="process4_desc">Strong systems should be ready for future upgrades, automation, and growth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark" id="about">
+    <div class="container about-grid">
+        <div class="about-text">
+            <p class="section-label" data-lang="about_label">ABOUT</p>
+            <h2 data-lang="about_title">Built for companies that want more than a generic solution</h2>
+            <p data-lang="about_desc1">
+                QuadifySoft is focused on building software that solves real business problems — not just making interfaces that look good.
+            </p>
+            <p data-lang="about_desc2">
+                Our goal is to create systems that bring structure, speed, clarity, and long-term value to teams and operations.
+            </p>
+        </div>
+
+        <div class="about-panel">
+            <div class="about-point">
+                <h3 data-lang="about_p1_title">Serious approach</h3>
+                <p data-lang="about_p1_desc">We build with long-term stability, structure, and business logic in mind.</p>
+            </div>
+
+            <div class="about-point">
+                <h3 data-lang="about_p2_title">Business-first thinking</h3>
+                <p data-lang="about_p2_desc">Every feature should have a purpose, measurable value, and practical use.</p>
+            </div>
+
+            <div class="about-point">
+                <h3 data-lang="about_p3_title">Modern execution</h3>
+                <p data-lang="about_p3_desc">Clean UX, scalable architecture, and room for future growth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact-panel">
+            <div class="contact-left">
+                <p class="section-label" data-lang="contact_label">CONTACT</p>
+                <h2 data-lang="contact_title">Let’s build something valuable</h2>
+                <p data-lang="contact_desc">
                     If you are looking for a serious software partner for custom systems,
                     AI tools, or business automation, QuadifySoft is ready to talk.
                 </p>
-
-                <a href="mailto:quadifysoft@gmail.com" class="btn btn-primary">quadifysoft@gmail.com</a>
             </div>
-        </section>
-    </main>
+
+            <div class="contact-right">
+                <a href="mailto:quadifysoft@gmail.com" class="contact-mail">quadifysoft@gmail.com</a>
+                <p class="contact-note" data-lang="contact_note">
+                    Open for project discussions, custom software inquiries, and long-term business collaboration.
+                </p>
+                <a href="mailto:quadifysoft@gmail.com" class="btn btn-primary" data-lang="contact_btn">Send an Email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <div class="footer-brand">QuadifySoft</div>
+            <p class="footer-copy" data-lang="footer_copy">Custom software, AI systems, and business automation.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#services" data-lang="nav_services">Services</a>
+            <a href="#about" data-lang="nav_about">About</a>
+            <a href="#contact" data-lang="nav_contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const translations = {
+    en: {
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_why: "Why us",
+        nav_about: "About",
+        nav_contact: "Contact",
+
+        hero_badge: "SERIOUS SOFTWARE FOR SERIOUS BUSINESSES",
+        hero_label: "SOFTWARE COMPANY",
+        hero_title: "Custom Software. AI Systems. Automation.",
+        hero_sub: "We build serious digital products for companies that want stronger workflows, better efficiency, and scalable systems built around real business needs.",
+        hero_btn1: "Start a Conversation",
+        hero_btn2: "Explore Services",
+
+        panel_label: "FOCUS",
+        panel_status: "Long-term value",
+        metric_1: "Custom business systems",
+        metric_2: "AI-powered workflows",
+        metric_3: "Automation & integration",
+        metric_4: "Scalable digital infrastructure",
+
+        intro_1: "Custom-built solutions",
+        intro_2: "Business automation",
+        intro_3: "AI-powered workflows",
+        intro_4: "Long-term digital systems",
+
+        services_label: "SERVICES",
+        services_title: "What we build",
+        services_desc: "We focus on practical software solutions that improve operations, reduce manual work, and help companies scale with confidence.",
+
+        card1_title: "Custom Business Software",
+        card1_desc: "Internal tools, portals, admin panels, and operational systems tailored to real business processes.",
+
+        card2_title: "AI Systems",
+        card2_desc: "AI assistants, inquiry handling, intelligent workflows, and internal process support tools.",
+
+        card3_title: "Automation",
+        card3_desc: "We automate repetitive workflows, connect systems, and eliminate friction from operations.",
+
+        why_label: "WHY COMPANIES CHOOSE US",
+        why_title: "Technology is only valuable when it solves the right problem",
+        why_desc: "We do not build generic solutions just to fill screens. We build systems that help businesses move faster, operate better, and grow with less friction.",
+
+        why1_title: "Business-first thinking",
+        why1_desc: "Every feature must have a clear role, practical value, and business purpose.",
+        why2_title: "Long-term structure",
+        why2_desc: "We aim for systems that can evolve over time, not quick fixes that break later.",
+        why3_title: "Modern execution",
+        why3_desc: "Clean UX, reliable architecture, and serious attention to implementation quality.",
+        why4_title: "Real efficiency",
+        why4_desc: "The goal is to save time, reduce manual work, and create measurable operational value.",
+
+        process_label: "PROCESS",
+        process_title: "How we approach projects",
+        process_desc: "We keep the process clear, practical, and aligned with real business needs from the first conversation to the final system.",
+        process1_title: "Understand the business",
+        process1_desc: "We first understand the workflow, bottlenecks, and actual business needs.",
+        process2_title: "Define the right solution",
+        process2_desc: "We shape the system around real value, not around unnecessary complexity.",
+        process3_title: "Build with structure",
+        process3_desc: "We develop with clarity, scalability, and long-term stability in mind.",
+        process4_title: "Improve and expand",
+        process4_desc: "Strong systems should be ready for future upgrades, automation, and growth.",
+
+        about_label: "ABOUT",
+        about_title: "Built for companies that want more than a generic solution",
+        about_desc1: "QuadifySoft is focused on building software that solves real business problems — not just making interfaces that look good.",
+        about_desc2: "Our goal is to create systems that bring structure, speed, clarity, and long-term value to teams and operations.",
+
+        about_p1_title: "Serious approach",
+        about_p1_desc: "We build with long-term stability, structure, and business logic in mind.",
+        about_p2_title: "Business-first thinking",
+        about_p2_desc: "Every feature should have a purpose, measurable value, and practical use.",
+        about_p3_title: "Modern execution",
+        about_p3_desc: "Clean UX, scalable architecture, and room for future growth.",
+
+        contact_label: "CONTACT",
+        contact_title: "Let’s build something valuable",
+        contact_desc: "If you are looking for a serious software partner for custom systems, AI tools, or business automation, QuadifySoft is ready to talk.",
+        contact_note: "Open for project discussions, custom software inquiries, and long-term business collaboration.",
+        contact_btn: "Send an Email",
+
+        footer_copy: "Custom software, AI systems, and business automation."
+    },
+
+    sr: {
+        nav_home: "Početna",
+        nav_services: "Usluge",
+        nav_why: "Zašto mi",
+        nav_about: "O nama",
+        nav_contact: "Kontakt",
+
+        hero_badge: "OZBILJAN SOFTVER ZA OZBILJNE FIRME",
+        hero_label: "SOFTVERSKA FIRMA",
+        hero_title: "Softver po meri. AI sistemi. Automatizacija.",
+        hero_sub: "Pravimo ozbiljna digitalna rešenja za kompanije koje žele jače procese, veću efikasnost i skalabilne sisteme prilagođene realnim poslovnim potrebama.",
+        hero_btn1: "Započnimo razgovor",
+        hero_btn2: "Pogledaj usluge",
+
+        panel_label: "FOKUS",
+        panel_status: "Dugoročna vrednost",
+        metric_1: "Poslovni sistemi po meri",
+        metric_2: "AI radni tokovi",
+        metric_3: "Automatizacija i integracije",
+        metric_4: "Skalabilna digitalna infrastruktura",
+
+        intro_1: "Rešenja po meri",
+        intro_2: "Automatizacija poslovanja",
+        intro_3: "AI radni tokovi",
+        intro_4: "Dugoročni digitalni sistemi",
+
+        services_label: "USLUGE",
+        services_title: "Šta pravimo",
+        services_desc: "Fokusirani smo na praktična softverska rešenja koja unapređuju poslovanje, smanjuju manuelni rad i pomažu firmama da rastu sigurnije.",
+
+        card1_title: "Poslovni softver po meri",
+        card1_desc: "Interni alati, portali, admin paneli i operativni sistemi prilagođeni stvarnim poslovnim procesima.",
+
+        card2_title: "AI sistemi",
+        card2_desc: "AI asistenti, obrada upita, pametni radni tokovi i alati za podršku internim procesima.",
+
+        card3_title: "Automatizacija",
+        card3_desc: "Automatizujemo ponavljajuće procese, povezujemo sisteme i uklanjamo uska grla u radu.",
+
+        why_label: "ZAŠTO FIRME BIRAJU NAS",
+        why_title: "Tehnologija vredi samo kada rešava pravi problem",
+        why_desc: "Ne pravimo generička rešenja samo da bi nešto izgledalo moderno. Pravimo sisteme koji pomažu firmama da rade brže, bolje i sa manje operativnog trenja.",
+
+        why1_title: "Fokus na biznis",
+        why1_desc: "Svaka funkcija mora da ima jasnu ulogu, praktičnu vrednost i poslovnu svrhu.",
+        why2_title: "Dugoročna struktura",
+        why2_desc: "Cilj su sistemi koji mogu da rastu i razvijaju se, a ne brza rešenja koja kasnije pucaju.",
+        why3_title: "Moderna realizacija",
+        why3_desc: "Čist UX, pouzdana arhitektura i ozbiljna pažnja implementaciji.",
+        why4_title: "Stvarna efikasnost",
+        why4_desc: "Cilj je ušteda vremena, manje manuelnog rada i merljiva operativna vrednost.",
+
+        process_label: "PROCES",
+        process_title: "Kako pristupamo projektima",
+        process_desc: "Proces držimo jasnim, praktičnim i usklađenim sa realnim poslovnim potrebama od prvog razgovora do finalnog sistema.",
+        process1_title: "Razumevanje biznisa",
+        process1_desc: "Prvo razumemo procese, uska grla i stvarne potrebe poslovanja.",
+        process2_title: "Definisanje pravog rešenja",
+        process2_desc: "Oblikujemo sistem oko realne vrednosti, a ne oko nepotrebne kompleksnosti.",
+        process3_title: "Izrada sa strukturom",
+        process3_desc: "Razvijamo sa fokusom na jasnoću, skalabilnost i dugoročnu stabilnost.",
+        process4_title: "Unapređenje i širenje",
+        process4_desc: "Kvalitetni sistemi moraju biti spremni za buduće nadogradnje, automatizaciju i rast.",
+
+        about_label: "O NAMA",
+        about_title: "Pravljeno za firme koje žele više od generičkog rešenja",
+        about_desc1: "QuadifySoft je fokusiran na razvoj softvera koji rešava stvarne poslovne probleme — ne samo na interfejse koji lepo izgledaju.",
+        about_desc2: "Naš cilj je da pravimo sisteme koji donose strukturu, brzinu, jasnoću i dugoročnu vrednost timovima i operacijama.",
+
+        about_p1_title: "Ozbiljan pristup",
+        about_p1_desc: "Gradimo uz dugoročnu stabilnost, strukturu i poslovnu logiku.",
+        about_p2_title: "Poslovno razmišljanje",
+        about_p2_desc: "Svaka funkcija treba da ima svrhu, merljivu vrednost i praktičnu primenu.",
+        about_p3_title: "Moderna izvedba",
+        about_p3_desc: "Čist UX, skalabilna arhitektura i prostor za budući rast.",
+
+        contact_label: "KONTAKT",
+        contact_title: "Hajde da napravimo nešto vredno",
+        contact_desc: "Ako tražite ozbiljnog softverskog partnera za custom sisteme, AI alate ili automatizaciju poslovanja, QuadifySoft je spreman za razgovor.",
+        contact_note: "Otvoreni smo za razgovore o projektima, izradi softvera po meri i dugoročnoj poslovnoj saradnji.",
+        contact_btn: "Pošalji email",
+
+        footer_copy: "Softver po meri, AI sistemi i automatizacija poslovanja."
+    }
+};
+
+function setLang(lang) {
+    localStorage.setItem('lang', lang);
+
+    document.querySelectorAll("[data-lang]").forEach(el => {
+        const key = el.getAttribute("data-lang");
+        if (translations[lang][key]) {
+            el.innerText = translations[lang][key];
+        }
+    });
+
+    document.documentElement.lang = lang === 'sr' ? 'sr' : 'en';
+
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-sr').classList.toggle('active', lang === 'sr');
+}
+
+window.onload = () => {
+    const savedLang = localStorage.getItem('lang') || 'en';
+    setLang(savedLang);
+};
+</script>
+
 </body>
 </html>
