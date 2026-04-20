@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero">
+    <header class="hero" id="home">
         <nav class="navbar container">
             <div class="logo">QuadifySoft</div>
+
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
 
@@ -23,14 +24,123 @@
             <p class="eyebrow">SOFTWARE COMPANY</p>
             <h1>Custom Software. AI Systems. Automation.</h1>
             <p class="subtitle">
-                We build serious digital products for companies that want more efficiency,
-                better workflows, and scalable systems.
+                We build serious digital products for companies that want better workflows,
+                more efficiency, and scalable business systems.
             </p>
+
             <div class="hero-actions">
-                <a href="#" class="btn btn-primary">Let’s Work Together</a>
-                <a href="#" class="btn btn-secondary">Our Services</a>
+                <a href="#contact" class="btn btn-primary">Let’s Work Together</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
             </div>
         </div>
     </header>
+
+    <main>
+        <section class="intro-strip">
+            <div class="container intro-strip-inner">
+                <div class="intro-item">
+                    <span>Custom-built solutions</span>
+                </div>
+                <div class="intro-item">
+                    <span>Business automation</span>
+                </div>
+                <div class="intro-item">
+                    <span>AI-powered workflows</span>
+                </div>
+                <div class="intro-item">
+                    <span>Serious long-term systems</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">SERVICES</p>
+                    <h2>What we build</h2>
+                    <p>
+                        We focus on practical software solutions that improve operations,
+                        reduce manual work, and help companies scale with confidence.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <article class="info-card">
+                        <div class="card-number">01</div>
+                        <h3>Custom Business Software</h3>
+                        <p>
+                            Internal tools, portals, admin panels, and operational systems
+                            tailored to real business processes.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-number">02</div>
+                        <h3>AI Systems</h3>
+                        <p>
+                            AI assistants, inquiry handling, internal knowledge workflows,
+                            and process support tools designed for real teams.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-number">03</div>
+                        <h3>Automation</h3>
+                        <p>
+                            We automate repetitive workflows, connect systems, and remove
+                            friction from daily operations.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <p class="section-label">ABOUT</p>
+                    <h2>Built for companies that want more than a generic solution</h2>
+                    <p>
+                        QuadifySoft is focused on building software that solves real business
+                        problems - not just making interfaces that look good.
+                    </p>
+                    <p>
+                        Our goal is to create systems that bring structure, speed, clarity,
+                        and long-term value to teams and operations.
+                    </p>
+                </div>
+
+                <div class="about-panel">
+                    <div class="about-point">
+                        <h3>Serious approach</h3>
+                        <p>We build with long-term stability, structure, and business logic in mind.</p>
+                    </div>
+
+                    <div class="about-point">
+                        <h3>Business-first thinking</h3>
+                        <p>Every feature should have a purpose, measurable value, and practical use.</p>
+                    </div>
+
+                    <div class="about-point">
+                        <h3>Modern execution</h3>
+                        <p>Clean UX, scalable architecture, and room for future growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container contact-box">
+                <p class="section-label">CONTACT</p>
+                <h2>Let’s build something valuable</h2>
+                <p>
+                    If you are looking for a serious software partner for custom systems,
+                    AI tools, or business automation, QuadifySoft is ready to talk.
+                </p>
+
+                <a href="mailto:quadifysoft@gmail.com" class="btn btn-primary">quadifysoft@gmail.com</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
