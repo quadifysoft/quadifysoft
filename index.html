@@ -8,8 +8,8 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#020509">
 <link rel="canonical" href="https://quadifysoft.github.io/quadifysoft/">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png?v=3">
+<link rel="apple-touch-icon" href="favicon.png?v=3">
 <meta property="og:title" content="Quadify Soft">
 <meta property="og:description" content="Custom software, AI systems, cloud platforms, and business automation.">
 <meta property="og:image" content="https://quadifysoft.github.io/quadifysoft/preview.png">
@@ -30,7 +30,7 @@
   "@type": "Organization",
   "name": "Quadify Soft",
   "url": "https://quadifysoft.github.io/quadifysoft/",
-  "logo": "https://quadifysoft.github.io/quadifysoft/logo-modern.svg",
+  "logo": "https://quadifysoft.github.io/quadifysoft/logo.png",
   "email": "quadifysoft@gmail.com",
   "telephone": "+381603115955"
 }
@@ -310,7 +310,7 @@ img { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 .logo-icon {
-  width: 62px; height: 62px;
+  width: 72px; height: 72px;
   border-radius: 16px;
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(145deg, rgba(59,122,247,0.2), rgba(0,212,200,0.08));
@@ -331,7 +331,7 @@ img { display: block; max-width: 100%; }
 }
 .logo-link:hover .logo-icon::after { transform: rotate(0deg) translateX(100%); }
 .logo-link:hover .logo-icon { box-shadow: 0 0 50px rgba(59,122,247,0.22), inset 0 1px 0 rgba(255,255,255,0.07); }
-.logo-img { width: 46px; height: 46px; object-fit: contain; }
+.logo-img { width: 60px; height: 60px; object-fit: contain; }
 .logo-name {
   font-family: var(--display);
   font-size: 24px;
@@ -2000,9 +2000,9 @@ section { position: relative; z-index: 2; }
     gap: 10px;
     padding: 12px;
   }
-  .logo-link { min-height: 52px; }
-  .logo-icon { width: 50px; height: 50px; border-radius: 13px; }
-  .logo-img { width: 36px; height: 36px; }
+  .logo-link { min-height: 58px; }
+  .logo-icon { width: 58px; height: 58px; border-radius: 13px; }
+  .logo-img { width: 48px; height: 48px; }
   .logo-name { font-size: 20px; }
   .logo-sub { font-size: 8px; letter-spacing: 2px; }
   .nav-links {
@@ -2026,15 +2026,14 @@ section { position: relative; z-index: 2; }
     order: 2;
     margin-left: auto;
     gap: 8px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    transition: max-height 0.28s ease, opacity 0.22s ease;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    pointer-events: auto;
   }
   .nav-mobile-toggle { display: inline-flex; }
   .nav-right .lang-sw,
-  .nav-right .nav-cta { display: flex; }
+  .nav-right .nav-cta { display: none; }
   .nav.menu-open .nav-links {
     max-height: 520px;
     opacity: 1;
@@ -2046,10 +2045,13 @@ section { position: relative; z-index: 2; }
     margin-left: 0;
     border-top: 1px solid var(--c1);
     padding-top: 10px;
-    max-height: 120px;
+    max-height: 180px;
     opacity: 1;
+    overflow: visible;
     pointer-events: auto;
   }
+  .nav.menu-open .nav-right .lang-sw,
+  .nav.menu-open .nav-right .nav-cta { display: flex; }
   .nav.menu-open .nav-right .nav-cta {
     display: flex;
     margin-left: auto;
@@ -2127,7 +2129,7 @@ section { position: relative; z-index: 2; }
 
 <!-- Preloader -->
 <div id="preloader">
-  <div class="pre-logo">QUADIFY SOFT</div>
+  <div class="pre-logo">quadifySoft</div>
   <div class="pre-bar-wrap"><div class="pre-bar"></div></div>
   <div class="pre-counter" id="preCounter">000</div>
 </div>
@@ -2161,10 +2163,10 @@ section { position: relative; z-index: 2; }
     <div class="nav wrap">
       <a href="#home" class="logo-link">
         <div class="logo-icon">
-          <img src="logo-modern.svg" alt="Quadify Soft" class="logo-img">
+          <img src="logo-mark.png" alt="quadifySoft" class="logo-img">
         </div>
         <div>
-          <div class="logo-name">Quadify Soft</div>
+          <div class="logo-name">quadifySoft</div>
           <div class="logo-sub" data-lang="logo_subtext">Software · AI · Cloud</div>
         </div>
       </a>
@@ -2810,7 +2812,7 @@ section { position: relative; z-index: 2; }
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-name">Quadify Soft</div>
+        <div class="logo-name">quadifySoft</div>
         <div class="logo-sub" data-lang="logo_subtext">Software · AI · Cloud</div>
         <p class="footer-tagline" data-lang="footer_copy">Custom software, AI systems, cloud platforms, and business automation for companies that need more than generic.</p>
         <a href="mailto:quadifysoft@gmail.com" class="footer-mail-link">✉ quadifysoft@gmail.com</a>
@@ -3377,9 +3379,11 @@ function initActiveNav() {
   const navLinks = Array.from(document.querySelectorAll('.nav-shell .nav-links a[href^="#"]'));
   const moreToggle = document.getElementById('navMoreToggle');
   if (!navLinks.length) return;
-  const sections = navLinks
-    .map(link => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
+  const uniqueTargets = [...new Set(navLinks.map(link => link.getAttribute('href')))];
+  const sections = uniqueTargets
+    .map(href => document.querySelector(href))
+    .filter(Boolean)
+    .sort((a, b) => a.offsetTop - b.offsetTop);
 
   const setActive = (id) => {
     let moreHasActive = false;
@@ -3405,10 +3409,10 @@ function initActiveNav() {
     const offset = getHeaderOffset();
     let current = sections[0]?.id || 'home';
 
-    sections.forEach(section => {
-      const top = section.getBoundingClientRect().top;
-      if (top <= offset) current = section.id;
-    });
+    for (const section of sections) {
+      if (window.scrollY + offset >= section.offsetTop) current = section.id;
+      else break;
+    }
 
     const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
     if (scrolledToBottom && sections.length) current = sections[sections.length - 1].id;
