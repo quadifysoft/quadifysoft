@@ -2260,7 +2260,7 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
 
 <!-- Preloader -->
 <div id="preloader">
-  <div class="pre-logo">quadifySoft</div>
+  <div class="pre-logo">Quadify Soft</div>
   <div class="pre-bar-wrap"><div class="pre-bar"></div></div>
   <div class="pre-counter" id="preCounter">000</div>
 </div>
@@ -2294,10 +2294,10 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
     <div class="nav wrap">
       <a href="#home" class="logo-link">
         <div class="logo-icon">
-          <img src="logo-mark.png" alt="quadifySoft" class="logo-img">
+          <img src="logo-mark.png" alt="Quadify Soft" class="logo-img">
         </div>
         <div>
-          <div class="logo-name">quadifySoft</div>
+          <div class="logo-name">Quadify Soft</div>
           <div class="logo-sub" data-lang="logo_subtext">Software · AI · Cloud</div>
         </div>
       </a>
@@ -2907,7 +2907,12 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
         </div>
 
         <div class="contact-body">
-          <form class="cf-grid" id="contactForm">
+          <form class="cf-grid" id="contactForm" action="https://formsubmit.co/quadifysoft@gmail.com" method="POST" target="formsubmit-frame">
+            <input type="hidden" name="_subject" value="New project inquiry - Quadify Soft">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" id="contactAutoresponse" value="">
+            <input type="hidden" name="_replyto" id="contactReplyTo" value="">
+            <input type="hidden" name="_captcha" value="true">
 
             <div class="cf-group">
               <label class="cf-label" data-lang="form_name_l">Name</label>
@@ -2939,9 +2944,10 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
             <div class="cf-group">
               <label class="cf-label" data-lang="form_timeline_l">Timeline</label>
               <select class="cf-select" name="timeline" id="contactTimeline" required>
-                <option value="asap" data-lang="form_timeline_opt1">ASAP</option>
-                <option value="1-3m" data-lang="form_timeline_opt2">1-3 months</option>
-                <option value="3m+" data-lang="form_timeline_opt3">3+ months</option>
+                <option value="1-3m" data-lang="form_timeline_opt1">1-3 months</option>
+                <option value="3-6m" data-lang="form_timeline_opt2">3-6 months</option>
+                <option value="6-12m" data-lang="form_timeline_opt3">6-12 months</option>
+                <option value="12m+" data-lang="form_timeline_opt4">12+ months</option>
               </select>
             </div>
 
@@ -2969,6 +2975,7 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
 
             <div class="cf-success" id="cfSuccess" data-lang="form_success">✓ Message sent — we'll be in touch soon.</div>
           </form>
+          <iframe name="formsubmit-frame" id="formsubmitFrame" title="FormSubmit frame" style="display:none;"></iframe>
         </div>
       </div>
     </div>
@@ -2992,7 +2999,7 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-name">quadifySoft</div>
+        <div class="logo-name">Quadify Soft</div>
         <div class="logo-sub" data-lang="logo_subtext">Software · AI · Cloud</div>
         <p class="footer-tagline" data-lang="footer_copy">Custom software, AI systems, cloud platforms, and business automation for companies that need more than generic.</p>
         <a href="mailto:quadifysoft@gmail.com" class="footer-mail-link">✉ quadifysoft@gmail.com</a>
@@ -3141,9 +3148,10 @@ en: {
   form_service_l:"Service",
   form_budget_l:"Budget",
   form_timeline_l:"Timeline",
-  form_timeline_opt1:"ASAP",
-  form_timeline_opt2:"1-3 months",
-  form_timeline_opt3:"3+ months",
+  form_timeline_opt1:"1-3 months",
+  form_timeline_opt2:"3-6 months",
+  form_timeline_opt3:"6-12 months",
+  form_timeline_opt4:"12+ months",
   form_project_type_l:"Project type",
   form_project_type_opt1:"New build",
   form_project_type_opt2:"Upgrade existing system",
@@ -3292,9 +3300,10 @@ sr: {
   form_service_l:"Usluga",
   form_budget_l:"Budžet",
   form_timeline_l:"Rok",
-  form_timeline_opt1:"ASAP",
-  form_timeline_opt2:"1-3 meseca",
-  form_timeline_opt3:"3+ meseca",
+  form_timeline_opt1:"1-3 meseca",
+  form_timeline_opt2:"3-6 meseci",
+  form_timeline_opt3:"6-12 meseci",
+  form_timeline_opt4:"12+ meseci",
   form_project_type_l:"Tip projekta",
   form_project_type_opt1:"Novi sistem",
   form_project_type_opt2:"Nadogradnja postojećeg",
@@ -3373,6 +3382,7 @@ function setLang(lang) {
   const budget = document.getElementById('contactBudget');
   const budgetVal = document.getElementById('contactBudgetValue');
   if (budget && budgetVal) budgetVal.textContent = formatBudgetValue(budget.value, lang);
+  syncAutoresponseText();
 }
 
 /* ─── TICKER ─── */
@@ -3577,6 +3587,12 @@ function initLeadFormUX() {
   sync();
 }
 
+function syncAutoresponseText() {
+  const lang = localStorage.getItem('qs_lang') || 'sr';
+  const ar = document.getElementById('contactAutoresponse');
+  if (ar) ar.value = T[lang].form_autoresponse || '';
+}
+
 function initTrackingClicks() {
   document.addEventListener('click', (e) => {
     const hit = e.target.closest('a, button');
@@ -3742,25 +3758,19 @@ function initActiveNav() {
 }
 
 /* ─── FORM ─── */
-async function handleSubmit(e) {
+let formSubmitPending = false;
+function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
   const success = document.getElementById('cfSuccess');
   const btn = form.querySelector('button[type="submit"]');
-  const lang = localStorage.getItem('qs_lang') || 'sr';
   const payload = {
     name: form.querySelector('#contactName').value.trim(),
     email: form.querySelector('#contactEmail').value.trim(),
-    company: form.querySelector('#contactCompany').value.trim(),
     service: form.querySelector('#contactService').value,
-    budget: form.querySelector('#contactBudget')?.value || '',
     timeline: form.querySelector('#contactTimeline')?.value || '',
     project_type: form.querySelector('#contactProjectType')?.value || '',
-    message: form.querySelector('#contactMessage').value.trim(),
-    _subject: 'New project inquiry - Quadify Soft',
-    _template: 'table',
-    _autoresponse: T[lang].form_autoresponse,
-    _captcha: 'false'
+    message: form.querySelector('#contactMessage').value.trim()
   };
 
   if (!payload.name || !payload.email || !payload.service || !payload.timeline || !payload.project_type || !payload.message) return;
@@ -3768,32 +3778,37 @@ async function handleSubmit(e) {
   btn.style.opacity = '0.5'; btn.style.pointerEvents = 'none';
   success.style.display = 'none';
   success.classList.remove('error');
+  syncAutoresponseText();
+  const replyTo = document.getElementById('contactReplyTo');
+  if (replyTo) replyTo.value = payload.email;
+  formSubmitPending = true;
+  qsTrack('form_submit', {
+    service: payload.service || 'na',
+    timeline: payload.timeline || 'na',
+    project_type: payload.project_type || 'na'
+  });
+  form.submit();
+}
 
-  try {
-    const response = await fetch('https://formsubmit.co/ajax/quadifysoft@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    if (!response.ok) throw new Error('Request failed');
+function initFormSubmitBridge() {
+  const frame = document.getElementById('formsubmitFrame');
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('cfSuccess');
+  if (!frame || !form || !success) return;
 
+  frame.addEventListener('load', () => {
+    if (!formSubmitPending) return;
+    formSubmitPending = false;
+    const lang = localStorage.getItem('qs_lang') || 'sr';
+    const btn = form.querySelector('button[type="submit"]');
+    success.classList.remove('error');
     success.style.display = 'block';
     success.textContent = T[lang].form_success;
-    qsTrack('form_submit', {
-      service: payload.service || 'na',
-      timeline: payload.timeline || 'na',
-      project_type: payload.project_type || 'na'
-    });
     form.reset();
     initLeadFormUX();
-  } catch (error) {
-    success.classList.add('error');
-    success.style.display = 'block';
-    success.textContent = T[lang].form_error;
-  } finally {
-    btn.style.opacity = '1'; btn.style.pointerEvents = 'auto';
+    if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
     setTimeout(() => { success.style.display = 'none'; }, 9000);
-  }
+  });
 }
 
 /* ─── INIT ─── */
@@ -3807,6 +3822,7 @@ window.addEventListener('load', () => {
   initMoreMenu();
   initActiveNav();
   initLeadFormUX();
+  initFormSubmitBridge();
   initTrackingClicks();
   const form = document.getElementById('contactForm');
   if (form) form.addEventListener('submit', handleSubmit);
