@@ -2907,11 +2907,12 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
         </div>
 
         <div class="contact-body">
-          <form class="cf-grid" id="contactForm" action="https://formsubmit.co/quadifysoft@gmail.com" method="POST" target="formsubmit-frame">
+          <form class="cf-grid" id="contactForm" action="https://formsubmit.co/quadifysoft@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New project inquiry - Quadify Soft">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_autoresponse" id="contactAutoresponse" value="">
             <input type="hidden" name="_replyto" id="contactReplyTo" value="">
+            <input type="hidden" name="_next" id="contactNext" value="">
             <input type="hidden" name="_captcha" value="true">
 
             <div class="cf-group">
@@ -2975,7 +2976,6 @@ body.page-ready .why-card:nth-child(4) { animation-delay: 0.26s; }
 
             <div class="cf-success" id="cfSuccess" data-lang="form_success">✓ Message sent — we'll be in touch soon.</div>
           </form>
-          <iframe name="formsubmit-frame" id="formsubmitFrame" title="FormSubmit frame" style="display:none;"></iframe>
         </div>
       </div>
     </div>
@@ -3758,56 +3758,29 @@ function initActiveNav() {
 }
 
 /* ─── FORM ─── */
-let formSubmitPending = false;
-function handleSubmit(e) {
-  e.preventDefault();
+function handleSubmit() {
   const form = document.getElementById('contactForm');
-  const success = document.getElementById('cfSuccess');
-  const btn = form.querySelector('button[type="submit"]');
+  if (!form) return;
   const payload = {
-    name: form.querySelector('#contactName').value.trim(),
-    email: form.querySelector('#contactEmail').value.trim(),
-    service: form.querySelector('#contactService').value,
-    timeline: form.querySelector('#contactTimeline')?.value || '',
-    project_type: form.querySelector('#contactProjectType')?.value || '',
-    message: form.querySelector('#contactMessage').value.trim()
+    email: form.querySelector('#contactEmail')?.value.trim() || '',
+    service: form.querySelector('#contactService')?.value || 'na',
+    timeline: form.querySelector('#contactTimeline')?.value || 'na',
+    project_type: form.querySelector('#contactProjectType')?.value || 'na'
   };
-
-  if (!payload.name || !payload.email || !payload.service || !payload.timeline || !payload.project_type || !payload.message) return;
-
-  btn.style.opacity = '0.5'; btn.style.pointerEvents = 'none';
-  success.style.display = 'none';
-  success.classList.remove('error');
   syncAutoresponseText();
   const replyTo = document.getElementById('contactReplyTo');
   if (replyTo) replyTo.value = payload.email;
-  formSubmitPending = true;
+  const next = document.getElementById('contactNext');
+  if (next) {
+    const u = new URL(window.location.href);
+    u.searchParams.set('submitted', '1');
+    u.hash = 'contact';
+    next.value = u.toString();
+  }
   qsTrack('form_submit', {
     service: payload.service || 'na',
     timeline: payload.timeline || 'na',
     project_type: payload.project_type || 'na'
-  });
-  form.submit();
-}
-
-function initFormSubmitBridge() {
-  const frame = document.getElementById('formsubmitFrame');
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('cfSuccess');
-  if (!frame || !form || !success) return;
-
-  frame.addEventListener('load', () => {
-    if (!formSubmitPending) return;
-    formSubmitPending = false;
-    const lang = localStorage.getItem('qs_lang') || 'sr';
-    const btn = form.querySelector('button[type="submit"]');
-    success.classList.remove('error');
-    success.style.display = 'block';
-    success.textContent = T[lang].form_success;
-    form.reset();
-    initLeadFormUX();
-    if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
-    setTimeout(() => { success.style.display = 'none'; }, 9000);
   });
 }
 
@@ -3822,10 +3795,20 @@ window.addEventListener('load', () => {
   initMoreMenu();
   initActiveNav();
   initLeadFormUX();
-  initFormSubmitBridge();
   initTrackingClicks();
   const form = document.getElementById('contactForm');
   if (form) form.addEventListener('submit', handleSubmit);
+  const success = document.getElementById('cfSuccess');
+  const params = new URLSearchParams(window.location.search);
+  if (success && params.get('submitted') === '1') {
+    success.classList.remove('error');
+    success.style.display = 'block';
+    success.textContent = T[lang].form_success;
+    setTimeout(() => { success.style.display = 'none'; }, 9000);
+    params.delete('submitted');
+    const clean = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}${window.location.hash || ''}`;
+    window.history.replaceState({}, '', clean);
+  }
   window.setTimeout(() => document.body.classList.add('page-ready'), 120);
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.getElementById('preloader').classList.add('done');
