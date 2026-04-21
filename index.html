@@ -3153,6 +3153,7 @@ en: {
   form_service_opt4:"Other / Consultation",
   form_message_l:"Message", form_message_ph:"Tell us about your project, goals, and timeline...",
   form_success:"✓ We received your inquiry. We will get back to you as soon as possible.",
+  form_autoresponse:"Thanks for contacting Quadify Soft. We received your inquiry and will get back to you as soon as possible.",
   form_error:"Message sending failed. Please email quadifysoft@gmail.com or call +381 60 311 5955.",
   faq_label:"FAQ",
   faq_h2:"Answers to common project questions",
@@ -3303,6 +3304,7 @@ sr: {
   form_service_opt4:"Ostalo / Konsultacija",
   form_message_l:"Poruka", form_message_ph:"Recite nam o vašem projektu, ciljevima i rokovima...",
   form_success:"✓ Primili smo vaš upit. Javićemo vam se u najkraćem roku.",
+  form_autoresponse:"Hvala što ste kontaktirali Quadify Soft. Primili smo vaš upit i javićemo vam se u najkraćem roku.",
   form_error:"Slanje poruke nije uspelo. Pišite na quadifysoft@gmail.com ili pozovite +381 60 311 5955.",
   faq_label:"FAQ",
   faq_h2:"Odgovori na česta pitanja o projektu",
@@ -3757,6 +3759,7 @@ async function handleSubmit(e) {
     message: form.querySelector('#contactMessage').value.trim(),
     _subject: 'New project inquiry - Quadify Soft',
     _template: 'table',
+    _autoresponse: T[lang].form_autoresponse,
     _captcha: 'false'
   };
 
@@ -3789,7 +3792,7 @@ async function handleSubmit(e) {
     success.textContent = T[lang].form_error;
   } finally {
     btn.style.opacity = '1'; btn.style.pointerEvents = 'auto';
-    setTimeout(() => { success.style.display = 'none'; }, 6000);
+    setTimeout(() => { success.style.display = 'none'; }, 9000);
   }
 }
 
