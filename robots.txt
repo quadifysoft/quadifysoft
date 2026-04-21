@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://quadifysoft.github.io/quadifysoft/sitemap.xml
