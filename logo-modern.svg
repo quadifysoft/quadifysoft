@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">QuadifySoft Logo</title>
+  <desc id="desc">Modern geometric Q mark with blue-teal gradient.</desc>
+  <defs>
+    <linearGradient id="bg" x1="10" y1="10" x2="118" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a1426"/>
+      <stop offset="1" stop-color="#08101d"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="20" y1="22" x2="108" y2="106" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#62a6ff"/>
+      <stop offset="1" stop-color="#00d4c8"/>
+    </linearGradient>
+    <linearGradient id="tail" x1="76" y1="74" x2="108" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7db4ff"/>
+      <stop offset="1" stop-color="#00d4c8"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <rect x="8.5" y="8.5" width="111" height="111" rx="27.5" fill="none" stroke="#1e3357"/>
+
+  <circle cx="62" cy="62" r="31" fill="none" stroke="url(#stroke)" stroke-width="10" filter="url(#glow)"/>
+  <path d="M80 82 L103 105" fill="none" stroke="url(#tail)" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+
+  <circle cx="62" cy="62" r="3.8" fill="#94c5ff" opacity="0.9"/>
+</svg>
