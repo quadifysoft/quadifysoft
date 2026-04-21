@@ -3379,6 +3379,8 @@ function initActiveNav() {
   const navLinks = Array.from(document.querySelectorAll('.nav-shell .nav-links a[href^="#"]'));
   const moreToggle = document.getElementById('navMoreToggle');
   if (!navLinks.length) return;
+  let forcedNavId = null;
+  let forcedNavUntil = 0;
   const uniqueTargets = [...new Set(navLinks.map(link => link.getAttribute('href')))];
   const sections = uniqueTargets
     .map(href => document.querySelector(href))
@@ -3409,6 +3411,12 @@ function initActiveNav() {
     const offset = getHeaderOffset();
     let current = sections[0]?.id || 'home';
 
+    if (forcedNavId && Date.now() < forcedNavUntil) {
+      setActive(forcedNavId);
+      return;
+    }
+    forcedNavId = null;
+
     for (const section of sections) {
       if (window.scrollY + offset >= section.offsetTop) current = section.id;
       else break;
@@ -3419,6 +3427,16 @@ function initActiveNav() {
 
     setActive(current);
   };
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const id = link.getAttribute('href').replace('#', '');
+      if (!id) return;
+      forcedNavId = id;
+      forcedNavUntil = Date.now() + 1300;
+      setActive(id);
+    });
+  });
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
