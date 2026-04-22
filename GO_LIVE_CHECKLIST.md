@@ -1,60 +1,63 @@
-﻿# Quadify Soft Go-Live Checklist
+# Quadify Soft Go-Live Checklist
 
-## 1) GA4 setup (events already wired)
+## 1) Domain + DNS
+- Domain: `quadifysoft.rs`
+- GitHub Pages custom domain file is present:
+  - `CNAME` -> `quadifysoft.rs`
+- DNS should contain:
+  - `A @ -> 185.199.108.153`
+  - `A @ -> 185.199.109.153`
+  - `A @ -> 185.199.110.153`
+  - `A @ -> 185.199.111.153`
+  - `CNAME www -> quadifysoft.github.io`
+- Wait until Cloudflare zone status is `Active`.
+
+## 2) GitHub Pages
+- Repo -> `Settings` -> `Pages`.
+- Set `Custom domain` to `quadifysoft.rs`.
+- Enable `Enforce HTTPS` when available.
+
+## 3) Search Console
+- Keep existing URL-prefix property for legacy GitHub URL.
+- Add and verify new property for:
+  - `https://quadifysoft.rs/`
+- Submit sitemap:
+  - `https://quadifysoft.rs/sitemap.xml`
+
+## 4) GA4 setup (events already wired)
 - Create GA4 property and Web Data Stream.
 - Copy Measurement ID (format `G-XXXX...`).
 - In `assets/js/head.js`, replace:
-  - `window.QS_GA4_ID = "G-XXXXXXXXXX"` with your real ID.
-- Open site and verify in GA4 Realtime:
+  - `window.QS_GA4_ID = "G-XXXXXXXXXX"` with real ID.
+- Verify in GA4 Realtime:
   - `form_submit`
   - `cta_start_click`
   - `book_call_click`
   - `phone_click`
   - `email_click`
 
-## 2) Search Console
-- Add property for your production domain.
-- Verify ownership.
-- In `index.html`, replace:
-  - `meta name="google-site-verification" content="REPLACE_WITH_SEARCH_CONSOLE_TOKEN"`
-- Submit sitemap URL:
-  - `/sitemap.xml`
+## 5) Email routing (Cloudflare)
+- Enable Email Routing after zone is `Active`.
+- Add forwarding aliases:
+  - `kontakt@quadifysoft.rs -> quadifysoft@gmail.com`
+  - `info@quadifysoft.rs -> quadifysoft@gmail.com`
+  - `office@quadifysoft.rs -> quadifysoft@gmail.com`
+- Add required MX/TXT records from Cloudflare wizard.
 
-## 3) HTTPS / "Not secure" fix
-- Production must run behind valid TLS certificate.
-- `.htaccess` already enforces redirect to HTTPS.
-- If hosting is Apache, keep `.htaccess` in web root.
-- If using Nginx/Cloudflare, keep equivalent HTTPS redirect + headers there too.
+## 6) Security notes
+- `.htaccess` headers apply only on Apache hosting.
+- On GitHub Pages, security headers must be handled by Cloudflare.
+- In Cloudflare, set SSL/TLS mode to `Full` after activation.
 
-## 4) Security headers
-- `.htaccess` already includes:
-  - HSTS
-  - CSP
-  - Referrer-Policy
-  - X-Content-Type-Options
-  - X-Frame-Options
-  - Permissions-Policy
-- After deploy, verify with browser devtools (Network -> Response headers).
-
-## 5) Final QA pass
+## 7) Final QA pass
 - Desktop + mobile smoke test:
-  - sticky header
-  - mobile menu
-  - active nav for `Proces`, `O nama`, `Kontakt`
-  - contact form submit + success message
-- Check all primary CTAs and contact links.
+  - sticky header and mobile menu behavior
+  - language switch
+  - contact form submit and success flow
+  - privacy/terms URLs
+- Check all CTA/contact links.
 
-## 6) Lighthouse mobile
-- Install Lighthouse CLI on your machine:
-  - `npm i -g lighthouse`
-- Run against production URL:
-  - `lighthouse https://your-domain.com --preset=desktop`
-  - `lighthouse https://your-domain.com --preset=perf`
-
-## 7) Asset optimization (recommended)
-- Current large assets to optimize first:
-  - `assets/img/logo.png`
-  - `assets/img/logo-mark.png`
-  - `assets/img/preview.png`
-- Compress to WebP/optimized PNG and re-test visual quality.
-
+## 8) Performance check
+- Run Lighthouse against production:
+  - `lighthouse https://quadifysoft.rs --preset=desktop`
+  - `lighthouse https://quadifysoft.rs --preset=perf`

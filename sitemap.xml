@@ -1,43 +1,44 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://quadifysoft.github.io/quadifysoft/</loc>
+    <loc>https://quadifysoft.rs/</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="sr" href="https://quadifysoft.github.io/quadifysoft/?lang=sr" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://quadifysoft.github.io/quadifysoft/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quadifysoft.github.io/quadifysoft/" />
+    <xhtml:link rel="alternate" hreflang="sr" href="https://quadifysoft.rs/?lang=sr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://quadifysoft.rs/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quadifysoft.rs/" />
   </url>
   <url>
-    <loc>https://quadifysoft.github.io/quadifysoft/privacy.html</loc>
+    <loc>https://quadifysoft.rs/privacy.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://quadifysoft.github.io/quadifysoft/terms.html</loc>
+    <loc>https://quadifysoft.rs/terms.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://quadifysoft.github.io/quadifysoft/programiranje-kraljevo.html</loc>
+    <loc>https://quadifysoft.rs/programiranje-kraljevo.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quadifysoft.github.io/quadifysoft/izrada-web-aplikacija-kraljevo.html</loc>
+    <loc>https://quadifysoft.rs/izrada-web-aplikacija-kraljevo.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quadifysoft.github.io/quadifysoft/softver-po-meri-kraljevo.html</loc>
+    <loc>https://quadifysoft.rs/softver-po-meri-kraljevo.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>
+
 
