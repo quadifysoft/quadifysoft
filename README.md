@@ -7,8 +7,12 @@ Static website for Quadify Soft.
 ```text
 .
 |- index.html
+|- programiranje-kraljevo.html
+|- izrada-web-aplikacija-kraljevo.html
+|- softver-po-meri-kraljevo.html
 |- privacy.html
 |- terms.html
+|- google34c1d7f5ad7d92b6.html
 |- assets/
 |  |- css/
 |  |  |- site.css

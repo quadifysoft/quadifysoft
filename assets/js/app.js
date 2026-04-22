@@ -4,7 +4,7 @@ en: {
   topbar_text:"Software partner for serious companies",
   logo_subtext:"Software · AI · Cloud",
   nav_home:"Home", nav_services:"Services", nav_projects:"Projects",
-  nav_cases:"Case Studies", nav_results:"Results", nav_process:"Process", nav_engage:"Engagement", nav_why:"Why us", nav_about:"About", nav_faq:"FAQ", nav_call:"Book Call", nav_more:"More", nav_menu:"Menu", nav_contact:"Contact", nav_local:"Kraljevo", nav_cta:"Start",
+  nav_cases:"Case Studies", nav_results:"Results", nav_process:"Process", nav_engage:"Engagement", nav_why:"Why us", nav_about:"About", nav_faq:"FAQ", nav_call:"Book Call", nav_more:"More", nav_menu:"Menu", nav_open_menu:"Open menu", nav_close_menu:"Close menu", nav_contact:"Contact", nav_local:"Kraljevo", nav_cta:"Start",
   hero_badge:"SERIOUS SOFTWARE FOR SERIOUS BUSINESSES",
   hero_line1:"CUSTOM", hero_line2:"SOFTWARE.", hero_line3:"AI · CLOUD.",
   hero_sub:"Quadify Soft builds serious digital products for companies that need stronger workflows, higher efficiency, scalable systems, and modern infrastructure aligned with real business needs.",
@@ -172,7 +172,7 @@ sr: {
   topbar_text:"Softverski partner za ozbiljne firme",
   logo_subtext:"Softver · AI · Cloud",
   nav_home:"Početna", nav_services:"Usluge", nav_projects:"Projekti",
-  nav_cases:"Studije", nav_results:"Rezultati", nav_process:"Proces", nav_engage:"Saradnja", nav_why:"Zašto mi", nav_about:"O nama", nav_faq:"FAQ", nav_call:"Poziv", nav_more:"Više", nav_menu:"Meni", nav_contact:"Kontakt", nav_local:"Kraljevo", nav_cta:"Pokreni",
+  nav_cases:"Studije", nav_results:"Rezultati", nav_process:"Proces", nav_engage:"Saradnja", nav_why:"Zašto mi", nav_about:"O nama", nav_faq:"FAQ", nav_call:"Poziv", nav_more:"Više", nav_menu:"Meni", nav_open_menu:"Otvori meni", nav_close_menu:"Zatvori meni", nav_contact:"Kontakt", nav_local:"Kraljevo", nav_cta:"Pokreni",
   hero_badge:"OZBILJAN SOFTVER ZA OZBILJNE FIRME",
   hero_line1:"SOFTVER", hero_line2:"PO MERI.", hero_line3:"AI · CLOUD.",
   hero_sub:"Quadify Soft pravi ozbiljna digitalna rešenja za firme kojima trebaju jači procesi, veća efikasnost, skalabilni sistemi i moderna infrastruktura usklađena sa stvarnim poslovnim potrebama.",
@@ -361,7 +361,19 @@ function setLang(lang) {
     srBtn.classList.toggle('active', lang === 'sr');
     srBtn.setAttribute('aria-pressed', lang === 'sr' ? 'true' : 'false');
   }
+  if (enBtn) enBtn.setAttribute('aria-label', 'Switch language to English');
+  if (srBtn) srBtn.setAttribute('aria-label', 'Promeni jezik na srpski');
+  const navToggle = document.getElementById('navMobileToggle');
+  if (navToggle) {
+    const menuOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-label', menuOpen ? t.nav_close_menu : t.nav_open_menu);
+  }
   buildTicker(lang);
+}
+
+function getCurrentLang() {
+  const raw = localStorage.getItem('qs_lang') || document.documentElement.lang || 'sr';
+  return raw === 'en' ? 'en' : 'sr';
 }
 
 /* ─── TICKER ─── */
@@ -509,13 +521,8 @@ function qsTrack(eventName, params = {}) {
 }
 
 function initTelemetryWarnings() {
-  const gscMeta = document.querySelector('meta[name="google-site-verification"]');
-  const gscMissing = !gscMeta || !gscMeta.content || gscMeta.content === 'REPLACE_WITH_SEARCH_CONSOLE_TOKEN';
   if (!window.QS_GA4_ID || window.QS_GA4_ID === 'G-XXXXXXXXXX') {
     console.warn('[Quadify Soft] GA4 is not configured. Set window.QS_GA4_ID in index.html.');
-  }
-  if (gscMissing) {
-    console.warn('[Quadify Soft] Search Console verification token is missing in meta[name=\"google-site-verification\"].');
   }
 }
 
@@ -573,26 +580,28 @@ function initMobileNav() {
   const nav = document.querySelector('.nav-shell .nav');
   const toggle = document.getElementById('navMobileToggle');
   const icon = toggle ? toggle.querySelector('.nav-mobile-icon') : null;
+  const linksWrap = nav ? nav.querySelector('.nav-links') : null;
   if (!nav || !toggle) return;
   toggle.setAttribute('aria-controls', 'primaryNavLinks');
+  const getLabel = (open) => T[getCurrentLang()][open ? 'nav_close_menu' : 'nav_open_menu'];
 
   const closeMenu = () => {
     nav.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.setAttribute('aria-label', getLabel(false));
     if (icon) icon.textContent = '☰';
     document.body.classList.remove('nav-lock');
   };
   const toggleMenu = () => {
     const open = nav.classList.toggle('menu-open');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', getLabel(open));
     if (icon) icon.textContent = open ? '✕' : '☰';
     document.body.classList.toggle('nav-lock', open && window.innerWidth <= 768);
   };
 
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', 'Open menu');
+  toggle.setAttribute('aria-label', getLabel(false));
   if (icon) icon.textContent = '☰';
   toggle.addEventListener('click', toggleMenu);
 
@@ -608,6 +617,13 @@ function initMobileNav() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth > 768 || !nav.classList.contains('menu-open')) return;
+    if (nav.contains(e.target) || toggle.contains(e.target)) return;
+    if (linksWrap && linksWrap.contains(e.target)) return;
+    closeMenu();
   });
 }
 
@@ -680,6 +696,11 @@ function initActiveNav() {
 function handleSubmit() {
   const form = document.getElementById('contactForm');
   if (!form) return;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('aria-busy', 'true');
+  }
   const payload = {
     email: form.querySelector('#contactEmail')?.value.trim() || '',
     service: form.querySelector('#contactService')?.value || 'na',

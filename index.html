@@ -14,7 +14,6 @@
 <link rel="canonical" href="https://quadifysoft.github.io/quadifysoft/">
 <link rel="icon" type="image/png" href="assets/img/favicon.png?v=3">
 <link rel="apple-touch-icon" href="assets/img/favicon.png?v=3">
-<meta name="google-site-verification" content="REPLACE_WITH_SEARCH_CONSOLE_TOKEN">
 <meta property="og:title" content="Quadify Soft - Programiranje Kraljevo">
 <meta property="og:site_name" content="Quadify Soft">
 <meta property="og:description" content="Custom software, AI systems, cloud platforms, and business automation in Kraljevo and Serbia.">
@@ -168,8 +167,8 @@
           <span data-lang="nav_menu">Menu</span>
         </button>
         <div class="lang-sw">
-          <button id="btn-en" type="button" aria-pressed="false">EN</button>
-          <button id="btn-sr" type="button" aria-pressed="false">SR</button>
+          <button id="btn-en" type="button" aria-pressed="false" aria-label="Switch language to English">EN</button>
+          <button id="btn-sr" type="button" aria-pressed="false" aria-label="Promeni jezik na srpski">SR</button>
         </div>
       </div>
     </div>
@@ -184,9 +183,11 @@
             <div class="eyebrow-dot"></div>
             <span data-lang="hero_badge">SERIOUS SOFTWARE FOR SERIOUS BUSINESSES</span>
           </div>
-          <div class="hero-h1" data-lang="hero_line1">CUSTOM</div>
-          <div class="hero-h1-teal" data-lang="hero_line2">SOFTWARE.</div>
-          <div class="hero-h1-outline" data-lang="hero_line3">AI · CLOUD.</div>
+          <h1 class="hero-title">
+            <span class="hero-h1" data-lang="hero_line1">CUSTOM</span>
+            <span class="hero-h1-teal" data-lang="hero_line2">SOFTWARE.</span>
+            <span class="hero-h1-outline" data-lang="hero_line3">AI · CLOUD.</span>
+          </h1>
 
           <p class="hero-sub" data-lang="hero_sub">We build serious digital products for companies that want stronger workflows, better efficiency, scalable systems, and modern infrastructure built around real business needs.</p>
 
@@ -781,24 +782,24 @@
             <input type="text" class="cf-honeypot" name="_honey" tabindex="-1" autocomplete="off">
 
             <div class="cf-group">
-              <label class="cf-label" data-lang="form_name_l">Name</label>
-              <input type="text" class="cf-input" name="name" id="contactName" data-lang-ph="form_name_ph" placeholder="Your name" autocomplete="name" required>
+              <label class="cf-label" for="contactName" data-lang="form_name_l">Name</label>
+              <input type="text" class="cf-input" name="name" id="contactName" data-lang-ph="form_name_ph" placeholder="Your name" autocomplete="name" minlength="2" required>
             </div>
 
             <div class="cf-group">
-              <label class="cf-label" data-lang="form_email_l">Email</label>
+              <label class="cf-label" for="contactEmail" data-lang="form_email_l">Email</label>
               <input type="email" class="cf-input" name="email" id="contactEmail" data-lang-ph="form_email_ph" placeholder="your@email.com" autocomplete="email" inputmode="email" required>
             </div>
 
             <div class="cf-group">
-              <label class="cf-label" data-lang="form_company_l">Company</label>
+              <label class="cf-label" for="contactCompany" data-lang="form_company_l">Company</label>
               <input type="text" class="cf-input" name="company" id="contactCompany" data-lang-ph="form_company_ph" placeholder="Company name" autocomplete="organization">
             </div>
 
             <div class="cf-group">
-              <label class="cf-label" data-lang="form_service_l">Service</label>
+              <label class="cf-label" for="contactService" data-lang="form_service_l">Service</label>
               <select class="cf-select" name="service" id="contactService" required>
-                <option value="" data-lang="form_service_opt0">Select a service</option>
+                <option value="" data-lang="form_service_opt0" selected disabled>Select a service</option>
                 <option value="custom" data-lang="form_service_opt1">Custom Business Software</option>
                 <option value="ai" data-lang="form_service_opt2">AI Systems</option>
                 <option value="cloud" data-lang="form_service_opt3">Cloud Platforms</option>
@@ -808,7 +809,7 @@
 
 
             <div class="cf-group">
-              <label class="cf-label" data-lang="form_timeline_l">Timeline</label>
+              <label class="cf-label" for="contactTimeline" data-lang="form_timeline_l">Timeline</label>
               <select class="cf-select" name="timeline" id="contactTimeline" required>
                 <option value="" data-lang="form_timeline_opt0" selected disabled>Select timeline</option>
                 <option value="1-3m" data-lang="form_timeline_opt1">1-3 months</option>
@@ -819,7 +820,7 @@
             </div>
 
             <div class="cf-group">
-              <label class="cf-label" data-lang="form_project_type_l">Project type</label>
+              <label class="cf-label" for="contactProjectType" data-lang="form_project_type_l">Project type</label>
               <select class="cf-select" name="project_type" id="contactProjectType" required>
                 <option value="" data-lang="form_project_type_opt0" selected disabled>Select project type</option>
                 <option value="new" data-lang="form_project_type_opt1">New build</option>
@@ -829,8 +830,8 @@
             </div>
 
             <div class="cf-group cf-group-full">
-              <label class="cf-label" data-lang="form_message_l">Message</label>
-              <textarea class="cf-textarea" name="message" id="contactMessage" data-lang-ph="form_message_ph" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+              <label class="cf-label" for="contactMessage" data-lang="form_message_l">Message</label>
+              <textarea class="cf-textarea" name="message" id="contactMessage" data-lang-ph="form_message_ph" placeholder="Tell us about your project, goals, and timeline..." minlength="10" spellcheck="true" required></textarea>
             </div>
 
             <div class="cf-bottom">
@@ -852,11 +853,6 @@
 <div class="floating-actions">
   <a href="#home" class="floating-action" data-lang="quick_top">Back to Top</a>
   <a href="#contact" class="floating-action primary" data-lang="quick_talk" data-track="cta_start_click">Start Conversation</a>
-</div>
-
-<div class="mobile-cta-bar">
-  <a href="tel:+381603115955" class="mobile-cta-call" data-lang="mobile_call">Call</a>
-  <a href="#contact" class="mobile-cta-start" data-lang="mobile_start" data-track="cta_start_click">Start Project</a>
 </div>
 
 </main>

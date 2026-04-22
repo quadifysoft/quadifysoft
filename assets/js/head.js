@@ -9,4 +9,3 @@ if (window.QS_GA4_ID && window.QS_GA4_ID !== 'G-XXXXXXXXXX') {
   gtag('js', new Date());
   gtag('config', window.QS_GA4_ID, { anonymize_ip: true });
 }
-window.QS_GSC_TOKEN = 'REPLACE_WITH_SEARCH_CONSOLE_TOKEN';
