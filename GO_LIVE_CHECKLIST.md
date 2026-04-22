@@ -3,7 +3,7 @@
 ## 1) GA4 setup (events already wired)
 - Create GA4 property and Web Data Stream.
 - Copy Measurement ID (format `G-XXXX...`).
-- In `index.html`, replace:
+- In `assets/js/head.js`, replace:
   - `window.QS_GA4_ID = "G-XXXXXXXXXX"` with your real ID.
 - Open site and verify in GA4 Realtime:
   - `form_submit`
@@ -40,7 +40,7 @@
 - Desktop + mobile smoke test:
   - sticky header
   - mobile menu
-  - active nav for `Proces`, `Kontakt`, `ViÅ¡e > O nama`
+  - active nav for `Proces`, `O nama`, `Kontakt`
   - contact form submit + success message
 - Check all primary CTAs and contact links.
 

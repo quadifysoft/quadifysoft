@@ -25,20 +25,7 @@
 <meta name="twitter:title" content="Quadify Soft — Custom Software. AI Systems. Cloud Platforms.">
 <meta name="twitter:description" content="Custom software, AI systems, cloud platforms, and business automation.">
 <meta name="twitter:image" content="https://quadifysoft.github.io/quadifysoft/assets/img/preview.png">
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.QS_GA4_ID = window.QS_GA4_ID || "G-XXXXXXXXXX";
-if (window.QS_GA4_ID && window.QS_GA4_ID !== "G-XXXXXXXXXX") {
-  const gaScript = document.createElement('script');
-  gaScript.async = true;
-  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${window.QS_GA4_ID}`;
-  document.head.appendChild(gaScript);
-  gtag('js', new Date());
-  gtag('config', window.QS_GA4_ID, { anonymize_ip: true });
-}
-window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
-</script>
+<script src="assets/js/head.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -56,6 +43,7 @@ window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- Cursor -->
@@ -104,7 +92,10 @@ window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
     <div class="nav wrap">
       <a href="#home" class="logo-link">
         <div class="logo-icon">
-          <img src="assets/img/logo-mark.png" alt="Quadify Soft" class="logo-img">
+          <picture>
+            <source srcset="assets/img/logo-mark.webp" type="image/webp">
+            <img src="assets/img/logo-mark.png" alt="Quadify Soft" class="logo-img" width="60" height="60" fetchpriority="high" decoding="async">
+          </picture>
         </div>
         <div>
           <div class="logo-name">Quadify Soft</div>
@@ -112,7 +103,7 @@ window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
         </div>
       </a>
 
-      <div class="nav-links">
+      <div class="nav-links" id="primaryNavLinks">
         <a href="#home" data-lang="nav_home">Home</a>
         <a href="#services" data-lang="nav_services">Services</a>
         <a href="#projects" data-lang="nav_projects">Projects</a>
@@ -125,17 +116,14 @@ window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
       </div>
 
       <div class="nav-right">
-        <button type="button" class="nav-mobile-toggle" id="navMobileToggle">
+        <button type="button" class="nav-mobile-toggle" id="navMobileToggle" aria-controls="primaryNavLinks" aria-expanded="false" aria-label="Open menu">
           <span class="nav-mobile-icon">☰</span>
           <span data-lang="nav_menu">Menu</span>
         </button>
         <div class="lang-sw">
-          <button id="btn-en" onclick="setLang('en')">EN</button>
-          <button id="btn-sr" onclick="setLang('sr')">SR</button>
+          <button id="btn-en" type="button">EN</button>
+          <button id="btn-sr" type="button">SR</button>
         </div>
-        <a href="#contact" class="nav-cta" data-lang="nav_cta" data-track="cta_start_click">
-          Start a Project <span>→</span>
-        </a>
       </div>
     </div>
   </nav>
@@ -230,7 +218,7 @@ window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
-<main>
+<main id="main-content">
 
 <!-- ══════════════════════ SERVICES ══════════════════════ -->
 <section class="s-light" id="services">
@@ -715,7 +703,7 @@ window.QS_GSC_TOKEN = "REPLACE_WITH_SEARCH_CONSOLE_TOKEN";
             <input type="hidden" name="_replyto" id="contactReplyTo" value="">
             <input type="hidden" name="_next" id="contactNext" value="https://quadifysoft.github.io/quadifysoft/?submitted=1#contact">
             <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" style="display:none">
+            <input type="text" class="cf-honeypot" name="_honey" tabindex="-1" autocomplete="off">
 
             <div class="cf-group">
               <label class="cf-label" data-lang="form_name_l">Name</label>

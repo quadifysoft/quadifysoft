@@ -61,10 +61,10 @@ en: {
   why3_title:"Modern execution", why3_desc:"Clean UX, reliable architecture, and serious attention to implementation quality at every layer of the stack.",
   why4_title:"Real efficiency", why4_desc:"The goal is to save time, reduce manual work, and create measurable operational value that compounds.",
   process_label:"Process", process_h2:"How We Approach Projects",
-  process_desc:"Clear, practical, and aligned with real business needs — from the first conversation to the final system.",
-  process1_title:"Understand the business", process1_desc:"We first understand the workflow, bottlenecks, and actual business needs — not just technical requirements.",
+  process_desc:"Clear, practical, and aligned with real business needs - from the first conversation to the final system.",
+  process1_title:"Understand the business", process1_desc:"We first understand the workflow, bottlenecks, and actual business needs - not just technical requirements.",
   process2_title:"Define the right solution", process2_desc:"We shape the system around real value, not around unnecessary complexity or trendy technology.",
-  process3_title:"Build with structure", process3_desc:"We develop with clarity, scalability, and long-term stability in mind — clean code, clean architecture.",
+  process3_title:"Build with structure", process3_desc:"We develop with clarity, scalability, and long-term stability in mind - clean code, clean architecture.",
   process4_title:"Improve and expand", process4_desc:"Strong systems must be ready for future upgrades, automation, and growth as the business evolves.",
   engage_label:"Engagement Models",
   engage_h2:"Ways we can work together",
@@ -73,15 +73,15 @@ en: {
   engage_k2:"Phase 02", engage_t2:"Build & Integrate", engage_d2:"Modular implementation, integrations, quality checks, and transparent milestones for predictable delivery.",
   engage_k3:"Phase 03", engage_t3:"Scale & Improve", engage_d3:"Post-launch optimization, feature expansion, and automation upgrades aligned with business growth.",
   about_label:"About", about_h2:"Built for companies that want more than a generic solution",
-  about_desc1:"Quadify Soft is focused on building software that solves real business problems — not just making interfaces that look good without doing anything useful.",
+  about_desc1:"Quadify Soft is focused on building software that solves real business problems - not just making interfaces that look good without doing anything useful.",
   about_desc2:"Our goal is to create systems that bring structure, speed, clarity, and long-term value to teams and operations. We think in business outcomes, not feature lists.",
   anum_1:"Focus", anum_2:"Powered", anum_3:"Scalable",
   about_p1_title:"Serious approach", about_p1_desc:"We build with long-term stability, structure, and business logic in mind at every decision.",
-  about_p2_title:"Business-first thinking", about_p2_desc:"Every feature should have a purpose, measurable value, and practical use — nothing exists just to look good.",
+  about_p2_title:"Business-first thinking", about_p2_desc:"Every feature should have a purpose, measurable value, and practical use - nothing exists just to look good.",
   about_p3_title:"Modern execution", about_p3_desc:"Clean UX, scalable architecture, and plenty of room for future growth without technical debt.",
-  about_p4_title:"Real partnership", about_p4_desc:"We work as an extension of your team — not a vendor that disappears after delivery.",
+  about_p4_title:"Real partnership", about_p4_desc:"We work as an extension of your team - not a vendor that disappears after delivery.",
   contact_label:"Contact", contact_h2:"Let's Build Something Valuable",
-  contact_desc:"If you are looking for a serious software partner for custom systems, AI tools, cloud platforms, or business automation — Quadify Soft is ready to talk.",
+  contact_desc:"If you are looking for a serious software partner for custom systems, AI tools, cloud platforms, or business automation - Quadify Soft is ready to talk.",
   contact_note:"Open for project discussions and long-term collaboration.",
   contact_response_badge:"Typical response time: under 24h",
   contact_btn:"Send Message",
@@ -213,10 +213,10 @@ sr: {
   why3_title:"Moderna realizacija", why3_desc:"Čist UX, pouzdana arhitektura i ozbiljna pažnja kvalitetu implementacije na svakom sloju.",
   why4_title:"Stvarna efikasnost", why4_desc:"Cilj je ušteda vremena, manje manuelnog rada i merljiva operativna vrednost koja se akumulira.",
   process_label:"Proces", process_h2:"Kako Pristupamo Projektima",
-  process_desc:"Jasno, praktično i usklađeno sa realnim poslovnim potrebama — od prvog razgovora do finalnog sistema.",
-  process1_title:"Razumevanje biznisa", process1_desc:"Prvo razumemo procese, uska grla i stvarne potrebe poslovanja — ne samo tehničke zahteve.",
+  process_desc:"Jasno, praktično i usklađeno sa realnim poslovnim potrebama - od prvog razgovora do finalnog sistema.",
+  process1_title:"Razumevanje biznisa", process1_desc:"Prvo razumemo procese, uska grla i stvarne potrebe poslovanja - ne samo tehničke zahteve.",
   process2_title:"Definisanje pravog rešenja", process2_desc:"Oblikujemo sistem oko realne vrednosti, a ne oko nepotrebne kompleksnosti ili modnih tehnologija.",
-  process3_title:"Izrada sa strukturom", process3_desc:"Razvijamo sa fokusom na jasnoću, skalabilnost i dugoročnu stabilnost — čist kod, čista arhitektura.",
+  process3_title:"Izrada sa strukturom", process3_desc:"Razvijamo sa fokusom na jasnoću, skalabilnost i dugoročnu stabilnost - čist kod, čista arhitektura.",
   process4_title:"Unapređenje i širenje", process4_desc:"Kvalitetni sistemi moraju biti spremni za buduće nadogradnje, automatizaciju i rast poslovanja.",
   engage_label:"Modeli saradnje",
   engage_h2:"Načini na koje možemo da sarađujemo",
@@ -225,15 +225,15 @@ sr: {
   engage_k2:"Faza 02", engage_t2:"Izrada i integracije", engage_d2:"Modularna implementacija, integracije, kontrole kvaliteta i transparentni milestone-i.",
   engage_k3:"Faza 03", engage_t3:"Skaliranje i rast", engage_d3:"Optimizacija nakon lansiranja, širenje funkcionalnosti i nadogradnje automatizacije.",
   about_label:"O nama", about_h2:"Pravljeno za firme koje žele više od generičkog rešenja",
-  about_desc1:"Quadify Soft je fokusiran na razvoj softvera koji rešava stvarne poslovne probleme — ne samo na interfejse koji lepo izgledaju, a ne rade ništa korisno.",
+  about_desc1:"Quadify Soft je fokusiran na razvoj softvera koji rešava stvarne poslovne probleme - ne samo na interfejse koji lepo izgledaju, a ne rade ništa korisno.",
   about_desc2:"Naš cilj je da pravimo sisteme koji donose strukturu, brzinu, jasnoću i dugoročnu vrednost timovima i operacijama. Razmišljamo u poslovnim ishodima, ne u listama funkcija.",
   anum_1:"Fokus", anum_2:"Pokretano", anum_3:"Skalabilno",
   about_p1_title:"Ozbiljan pristup", about_p1_desc:"Gradimo uz dugoročnu stabilnost, strukturu i poslovnu logiku na svakoj odluci.",
-  about_p2_title:"Poslovno razmišljanje", about_p2_desc:"Svaka funkcija treba da ima svrhu, merljivu vrednost i praktičnu primenu — ništa ne postoji samo da lepo izgleda.",
+  about_p2_title:"Poslovno razmišljanje", about_p2_desc:"Svaka funkcija treba da ima svrhu, merljivu vrednost i praktičnu primenu - ništa ne postoji samo da lepo izgleda.",
   about_p3_title:"Moderna izvedba", about_p3_desc:"Čist UX, skalabilna arhitektura i prostor za budući rast bez tehničkog duga.",
-  about_p4_title:"Pravo partnerstvo", about_p4_desc:"Radimo kao produžetak vašeg tima — ne kao vendor koji nestaje posle isporuke.",
+  about_p4_title:"Pravo partnerstvo", about_p4_desc:"Radimo kao produžetak vašeg tima - ne kao vendor koji nestaje posle isporuke.",
   contact_label:"Kontakt", contact_h2:"Hajde da napravimo nešto vredno",
-  contact_desc:"Ako tražite ozbiljnog softverskog partnera za custom sisteme, AI alate, cloud platforme ili automatizaciju poslovanja — Quadify Soft je spreman za razgovor.",
+  contact_desc:"Ako tražite ozbiljnog softverskog partnera za custom sisteme, AI alate, cloud platforme ili automatizaciju poslovanja - Quadify Soft je spreman za razgovor.",
   contact_note:"Otvoreni smo za razgovore o projektima i dugoročnoj saradnji.",
   contact_response_badge:"Tipično vreme odgovora: ispod 24h",
   contact_btn:"Pošalji poruku",
@@ -529,6 +529,14 @@ function initLeadFormUX() {
   sync();
 }
 
+function initLangSwitch() {
+  const en = document.getElementById('btn-en');
+  const sr = document.getElementById('btn-sr');
+  if (!en || !sr) return;
+  en.addEventListener('click', () => setLang('en'));
+  sr.addEventListener('click', () => setLang('sr'));
+}
+
 function initTrackingClicks() {
   document.addEventListener('click', (e) => {
     const hit = e.target.closest('a, button');
@@ -548,6 +556,7 @@ function initMobileNav() {
   const toggle = document.getElementById('navMobileToggle');
   const icon = toggle ? toggle.querySelector('.nav-mobile-icon') : null;
   if (!nav || !toggle) return;
+  toggle.setAttribute('aria-controls', 'primaryNavLinks');
 
   const closeMenu = () => {
     nav.classList.remove('menu-open');
@@ -569,7 +578,7 @@ function initMobileNav() {
   if (icon) icon.textContent = '☰';
   toggle.addEventListener('click', toggleMenu);
 
-  nav.querySelectorAll('.nav-links a, .nav-cta').forEach(link => {
+  nav.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 768) closeMenu();
     });
@@ -682,6 +691,7 @@ window.addEventListener('load', () => {
   initTelemetryWarnings();
   initScrollProgress();
   initSectionDepth();
+  initLangSwitch();
   initMobileNav();
   initActiveNav();
   initLeadFormUX();
@@ -692,9 +702,9 @@ window.addEventListener('load', () => {
   const params = new URLSearchParams(window.location.search);
   if (success && params.get('submitted') === '1') {
     success.classList.remove('error');
-    success.style.display = 'block';
+    success.classList.add('is-visible');
     success.textContent = T[lang].form_success;
-    setTimeout(() => { success.style.display = 'none'; }, 9000);
+    setTimeout(() => { success.classList.remove('is-visible'); }, 9000);
     params.delete('submitted');
     const clean = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}${window.location.hash || ''}`;
     window.history.replaceState({}, '', clean);

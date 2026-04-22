@@ -11,9 +11,12 @@
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-site"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-  Header always set X-XSS-Protection "1; mode=block"
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://formsubmit.co; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests"
+  Header always set X-XSS-Protection "0"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-8Sq5xkt2NUeWNmdYwvU0X/Q6kEhjybEgGMqzU6Ss6Wc=' 'sha256-Wd5GSYXQgbT2mM41G9YHAQR6vtq0Tjl6rBIV9AHUPqo='; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://formsubmit.co; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests"
 </IfModule>
 
 <IfModule mod_deflate.c>

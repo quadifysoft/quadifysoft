@@ -7,30 +7,30 @@ Static website for Quadify Soft.
 ```text
 .
 |- index.html
-|- pages/
-|  |- privacy.html
-|  `- terms.html
+|- privacy.html
+|- terms.html
 |- assets/
 |  |- css/
 |  |  |- site.css
 |  |  `- legal.css
 |  |- js/
-|  |  `- app.js
+|  |  |- app.js
+|  |  `- head.js
 |  `- img/
 |     |- favicon.png
 |     |- logo.png
+|     |- logo.webp
 |     |- logo-mark.png
+|     |- logo-mark.webp
 |     |- logo-modern.svg
 |     `- preview.png
-`- legacy/
-   |- app.js
-   |- site.css
-   `- style.css
+|- .htaccess
+|- robots.txt
+`- sitemap.xml
 ```
 
 ## Notes
 
-- `index.html` links to external `assets/css/site.css` and `assets/js/app.js`.
-- Legal pages are served via pretty URLs `/privacy` and `/terms` through `.htaccess` rewrites.
-- `pages/privacy.html` and `pages/terms.html` share `assets/css/legal.css`.
-- Some old root files may still exist while the local server process keeps a file lock.
+- `index.html` links to external `assets/css/site.css`, `assets/js/head.js`, and `assets/js/app.js`.
+- Legal pages have a single source of truth in root: `privacy.html` and `terms.html`.
+- Form submit uses FormSubmit with `_captcha=false` and honeypot spam protection.
