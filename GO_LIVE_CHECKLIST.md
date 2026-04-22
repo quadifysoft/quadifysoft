@@ -1,4 +1,4 @@
-# Quadify Soft Go-Live Checklist
+﻿# Quadify Soft Go-Live Checklist
 
 ## 1) GA4 setup (events already wired)
 - Create GA4 property and Web Data Stream.
@@ -40,7 +40,7 @@
 - Desktop + mobile smoke test:
   - sticky header
   - mobile menu
-  - active nav for `Proces`, `Kontakt`, `Više > O nama`
+  - active nav for `Proces`, `Kontakt`, `ViÅ¡e > O nama`
   - contact form submit + success message
 - Check all primary CTAs and contact links.
 
@@ -53,7 +53,8 @@
 
 ## 7) Asset optimization (recommended)
 - Current large assets to optimize first:
-  - `logo.png`
-  - `logo-mark.png`
-  - `preview.png`
+  - `assets/img/logo.png`
+  - `assets/img/logo-mark.png`
+  - `assets/img/preview.png`
 - Compress to WebP/optimized PNG and re-test visual quality.
+
