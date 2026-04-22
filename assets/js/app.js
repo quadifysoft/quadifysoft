@@ -1,4 +1,4 @@
-﻿/* ─── TRANSLATIONS ─── */
+/* ─── TRANSLATIONS ─── */
 const T = {
 en: {
   topbar_text:"Software partner for serious companies",
@@ -107,7 +107,7 @@ en: {
   form_message_l:"Message", form_message_ph:"Tell us about your project, goals, and timeline...",
   form_success:"✓ We received your inquiry. We will get back to you as soon as possible.",
   form_autoresponse:"Thanks for contacting Quadify Soft. We received your inquiry and will get back to you as soon as possible.",
-  form_error:"Message sending failed. Please email quadifysoft@gmail.com or call +381 60 311 5955.",
+  form_error:"Message sending failed. Please email office@quadifysoft.rs or call +381 60 311 5955.",
   faq_label:"FAQ",
   faq_h2:"Answers to common project questions",
   faq_desc:"If you are evaluating software partners, these are usually the first questions decision-makers ask before kickoff.",
@@ -153,7 +153,7 @@ en: {
   call_btn2:"Call Now",
   call_side_h3:"Preferred Call Windows",
   call_side_p1:"Mon-Fri · 09:00-18:00 (CET)",
-  call_side_p2:"You can also send a brief project summary to quadifysoft@gmail.com and we will follow up quickly.",
+  call_side_p2:"You can also send a brief project summary to office@quadifysoft.rs and we will follow up quickly.",
   start_h2:"Ready to Build the Right System?",
   start_desc:"Share your workflow challenges and goals. We will propose a practical roadmap with clear phases, priorities, and expected outcomes.",
   start_btn1:"Start a Project",
@@ -275,7 +275,7 @@ sr: {
   form_message_l:"Poruka", form_message_ph:"Recite nam o vašem projektu, ciljevima i rokovima...",
   form_success:"✓ Primili smo vaš upit. Javićemo vam se u najkraćem roku.",
   form_autoresponse:"Hvala što ste kontaktirali Quadify Soft. Primili smo vaš upit i javićemo vam se u najkraćem roku.",
-  form_error:"Slanje poruke nije uspelo. Pišite na quadifysoft@gmail.com ili pozovite +381 60 311 5955.",
+  form_error:"Slanje poruke nije uspelo. Pišite na office@quadifysoft.rs ili pozovite +381 60 311 5955.",
   faq_label:"FAQ",
   faq_h2:"Odgovori na česta pitanja o projektu",
   faq_desc:"Ako birate softverskog partnera, ovo su najčešća pitanja pre početka saradnje.",
@@ -321,7 +321,7 @@ sr: {
   call_btn2:"Pozovi odmah",
   call_side_h3:"Dostupni termini za poziv",
   call_side_p1:"Pon-Pet · 09:00-18:00 (CET)",
-  call_side_p2:"Možete poslati i kratak opis projekta na quadifysoft@gmail.com, a mi se brzo javljamo.",
+  call_side_p2:"Možete poslati i kratak opis projekta na office@quadifysoft.rs, a mi se brzo javljamo.",
   start_h2:"Spremni da izgradimo pravi sistem?",
   start_desc:"Podelite izazove u procesima i poslovne ciljeve. Dobićete praktičan plan sa jasnim fazama, prioritetima i očekivanim rezultatima.",
   start_btn1:"Pokreni projekat",
@@ -752,6 +752,3 @@ window.addEventListener('load', () => {
     document.getElementById('preloader').classList.add('done');
   }
 });
-
-
-
