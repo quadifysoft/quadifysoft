@@ -325,7 +325,6 @@ function setLang(lang) {
   const budget = document.getElementById('contactBudget');
   const budgetVal = document.getElementById('contactBudgetValue');
   if (budget && budgetVal) budgetVal.textContent = formatBudgetValue(budget.value, lang);
-  syncAutoresponseText();
 }
 
 /* ─── TICKER ─── */
@@ -530,12 +529,6 @@ function initLeadFormUX() {
   sync();
 }
 
-function syncAutoresponseText() {
-  const lang = localStorage.getItem('qs_lang') || 'sr';
-  const ar = document.getElementById('contactAutoresponse');
-  if (ar) ar.value = T[lang].form_autoresponse || '';
-}
-
 function initTrackingClicks() {
   document.addEventListener('click', (e) => {
     const hit = e.target.closest('a, button');
@@ -591,49 +584,8 @@ function initMobileNav() {
   });
 }
 
-/* ─── ACTIVE NAV ─── */
-function initMoreMenu() {
-  const wrap = document.getElementById('navMore');
-  const toggle = document.getElementById('navMoreToggle');
-  if (!wrap || !toggle) return;
-
-  const close = () => {
-    wrap.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  };
-  const open = () => {
-    wrap.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-  };
-
-  toggle.setAttribute('aria-haspopup', 'true');
-  toggle.setAttribute('aria-expanded', 'false');
-
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (wrap.classList.contains('open')) close();
-    else open();
-  });
-
-  wrap.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', close);
-  });
-  document.querySelectorAll('.nav-shell .nav-links > a[href^="#"]').forEach(link => {
-    link.addEventListener('click', close);
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!wrap.contains(e.target)) close();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
-  });
-}
-
 function initActiveNav() {
   const navLinks = Array.from(document.querySelectorAll('.nav-shell .nav-links a[href^="#"]'));
-  const moreToggle = document.getElementById('navMoreToggle');
   if (!navLinks.length) return;
   let forcedNavId = null;
   let forcedNavUntil = 0;
@@ -644,15 +596,12 @@ function initActiveNav() {
     .sort((a, b) => a.offsetTop - b.offsetTop);
 
   const setActive = (id) => {
-    let moreHasActive = false;
     navLinks.forEach(link => {
       const active = link.getAttribute('href') === `#${id}`;
       link.classList.toggle('active', active);
-      if (active && link.closest('.nav-more-menu')) moreHasActive = true;
       if (active) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
-    if (moreToggle) moreToggle.classList.toggle('active', moreHasActive);
   };
 
   const getHeaderOffset = () => {
@@ -710,7 +659,6 @@ function handleSubmit() {
     timeline: form.querySelector('#contactTimeline')?.value || 'na',
     project_type: form.querySelector('#contactProjectType')?.value || 'na'
   };
-  syncAutoresponseText();
   const replyTo = document.getElementById('contactReplyTo');
   if (replyTo) replyTo.value = payload.email;
   const next = document.getElementById('contactNext');
@@ -735,7 +683,6 @@ window.addEventListener('load', () => {
   initScrollProgress();
   initSectionDepth();
   initMobileNav();
-  initMoreMenu();
   initActiveNav();
   initLeadFormUX();
   initTrackingClicks();
