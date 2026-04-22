@@ -1,13 +1,13 @@
 ﻿/* ─── TRANSLATIONS ─── */
 const T = {
 en: {
-  topbar_text:"Custom software partner for serious companies",
+  topbar_text:"Software partner for serious companies",
   logo_subtext:"Software · AI · Cloud",
   nav_home:"Home", nav_services:"Services", nav_projects:"Projects",
   nav_cases:"Case Studies", nav_results:"Results", nav_process:"Process", nav_engage:"Engagement", nav_why:"Why us", nav_about:"About", nav_faq:"FAQ", nav_call:"Book Call", nav_more:"More", nav_menu:"Menu", nav_contact:"Contact", nav_cta:"Start",
   hero_badge:"SERIOUS SOFTWARE FOR SERIOUS BUSINESSES",
   hero_line1:"CUSTOM", hero_line2:"SOFTWARE.", hero_line3:"AI · CLOUD.",
-  hero_sub:"We build serious digital products for companies that want stronger workflows, better efficiency, scalable systems, and modern infrastructure built around real business needs.",
+  hero_sub:"We build serious digital products for companies that need stronger workflows, higher efficiency, scalable systems, and modern infrastructure aligned with real business needs.",
   hero_btn1:"Start a Conversation", hero_btn2:"See Selected Work",
   stat_1:"Custom Systems", stat_2:"Automation", stat_3:"Infrastructure",
   tc_cmd1:"init build --type=enterprise",
@@ -24,7 +24,7 @@ en: {
   card2_title:"AI Systems", card2_desc:"AI assistants, inquiry handling, intelligent workflows, and internal process support tools. Real automation that removes real bottlenecks.",
   card3_title:"Cloud Platforms", card3_desc:"Scalable cloud environments, connected business modules, and modern web infrastructure for growing operations. Built to last.",
   tech_label:"Technologies & Capabilities",
-  projects_label:"Selected Work", projects_h2:"Systems We Build",
+  projects_label:"Selected Work", projects_h2:"Systems We Deliver",
   projects_desc:"A selection of solution types, platforms, and business systems designed around real operational needs.",
   project1_type:"AI / Inquiry Automation", project1_title:"AI inquiry processing and response drafting system",
   project1_desc:"A system for collecting inbound requests, extracting key information, structuring inquiries, and helping teams prepare fast and consistent responses.", project1_tag:"AI System",
@@ -39,7 +39,7 @@ en: {
   cases_desc:"Representative formats of projects we deliver. Scope and metrics depend on domain complexity, team readiness, and data quality.",
   case1_type:"Inquiry Operations", case1_title:"AI-assisted response workflow", case1_result:"Result: response preparation reduced from hours to minutes for repetitive inbound requests.",
   case2_type:"Document Control", case2_title:"QR label traceability platform", case2_result:"Result: improved record accuracy and faster retrieval across internal audit and operations.",
-  case3_type:"Business Platform", case3_title:"Cloud B2B/B2C operations system", case3_result:"Result: centralized workflows, improved visibility, and scalable multi-module business execution.",
+  case3_type:"Business Platform", case3_title:"Cloud B2B/B2C operations system", case3_result:"Result: centralized workflows, better visibility, and scalable multi-module execution.",
   case1_metric1_k:"Before", case1_metric1_v:"3h+",
   case1_metric2_k:"After", case1_metric2_v:"15m",
   case2_metric1_k:"Before", case2_metric1_v:"62%",
@@ -80,22 +80,24 @@ en: {
   about_p2_title:"Business-first thinking", about_p2_desc:"Every feature should have a purpose, measurable value, and practical use - nothing exists just to look good.",
   about_p3_title:"Modern execution", about_p3_desc:"Clean UX, scalable architecture, and plenty of room for future growth without technical debt.",
   about_p4_title:"Real partnership", about_p4_desc:"We work as an extension of your team - not a vendor that disappears after delivery.",
-  contact_label:"Contact", contact_h2:"Let's Build Something Valuable",
-  contact_desc:"If you are looking for a serious software partner for custom systems, AI tools, cloud platforms, or business automation - Quadify Soft is ready to talk.",
-  contact_note:"Open for project discussions and long-term collaboration.",
+  contact_label:"Contact", contact_h2:"Let's Build Something That Matters",
+  contact_desc:"If you are looking for a serious software partner for custom systems, AI tools, cloud platforms, or business automation, Quadify Soft is ready to talk.",
+  contact_note:"Open for new projects and long-term partnerships.",
   contact_response_badge:"Typical response time: under 24h",
   contact_btn:"Send Message",
-  form_name_l:"Name and Surname", form_name_ph:"Your name and surname",
+  form_name_l:"Full name", form_name_ph:"Your full name",
   form_email_l:"Email", form_email_ph:"your@email.com",
   form_company_l:"Company", form_company_ph:"Company name",
   form_service_l:"Service",
   form_budget_l:"Budget",
   form_timeline_l:"Timeline",
+  form_timeline_opt0:"Select timeline",
   form_timeline_opt1:"1-3 months",
   form_timeline_opt2:"3-6 months",
   form_timeline_opt3:"6-12 months",
   form_timeline_opt4:"12+ months",
   form_project_type_l:"Project type",
+  form_project_type_opt0:"Select project type",
   form_project_type_opt1:"New build",
   form_project_type_opt2:"Upgrade existing system",
   form_project_type_opt3:"Automation",
@@ -118,7 +120,7 @@ en: {
   faq4_q:"Do you provide long-term support?",
   faq4_a:"Yes. We continue with maintenance, optimization, and feature expansion based on your evolving priorities.",
   proof_label:"Social Proof",
-  proof_h2:"Built in partnership with serious teams",
+  proof_h2:"Built with serious teams",
   proof_desc:"Operational software succeeds when business and technology teams move together. We build with that mindset from day one.",
   proof_logo_label:"Example project categories",
   proof_q1:"\"From scattered manual tasks to one reliable process flow. The team executed with structure and clarity.\"",
@@ -128,24 +130,24 @@ en: {
   proof_q3:"\"Practical delivery, clear communication, and architecture that is ready for long-term growth.\"",
   proof_m3:"Founder · Service Business",
   call_label:"Book a Call",
-  call_h2:"Schedule a focused project consultation",
-  call_desc:"A short call is usually enough to map your current workflow, define priorities, and decide the best technical direction.",
+  call_h2:"Book a focused project consultation",
+  call_desc:"A short call is usually enough to map your current workflow, set priorities, and decide the best technical direction.",
   call_i1:"- 20-30 minutes, no fluff, business-first discussion",
   call_i2:"- Quick review of bottlenecks and process risks",
   call_i3:"- Suggested implementation path and next step",
-  call_btn1:"Request a Call by Email",
+  call_btn1:"Request a Call via Email",
   call_btn2:"Call Now",
   call_side_h3:"Preferred Call Windows",
   call_side_p1:"Mon-Fri · 09:00-18:00 (CET)",
   call_side_p2:"You can also send a brief project summary to quadifysoft@gmail.com and we will follow up quickly.",
-  start_h2:"Ready to Build Something Serious?",
+  start_h2:"Ready to Build the Right System?",
   start_desc:"Share your workflow challenges and goals. We will propose a practical roadmap with clear phases, priorities, and expected outcomes.",
   start_btn1:"Start a Project",
   start_btn2:"Call Us",
   mobile_call:"Call",
   mobile_start:"Start Project",
   quick_top:"Back to Top",
-  quick_talk:"Start Conversation",
+  quick_talk:"Start a Project Conversation",
   footer_copy:"Custom software, AI systems, cloud platforms, and business automation for companies that need more than generic.",
   footer_col1:"Navigation", footer_col2:"Services", footer_col3:"Contact", footer_col4:"Explore",
   footer_rights:"© 2026 Quadify Soft. All rights reserved.",
@@ -153,15 +155,15 @@ en: {
   ticker_items:["Custom-built solutions","Business automation","AI-powered workflows","Long-term digital systems","Cloud infrastructure","Scalable platforms","Internal tools","Smart operations","Enterprise software"]
 },
 sr: {
-  topbar_text:"Softverski partner za ozbiljne kompanije",
+  topbar_text:"Softverski partner za ozbiljne firme",
   logo_subtext:"Softver · AI · Cloud",
   nav_home:"Početna", nav_services:"Usluge", nav_projects:"Projekti",
   nav_cases:"Studije", nav_results:"Rezultati", nav_process:"Proces", nav_engage:"Saradnja", nav_why:"Zašto mi", nav_about:"O nama", nav_faq:"FAQ", nav_call:"Poziv", nav_more:"Više", nav_menu:"Meni", nav_contact:"Kontakt", nav_cta:"Pokreni",
   hero_badge:"OZBILJAN SOFTVER ZA OZBILJNE FIRME",
   hero_line1:"SOFTVER", hero_line2:"PO MERI.", hero_line3:"AI · CLOUD.",
-  hero_sub:"Pravimo ozbiljna digitalna rešenja za kompanije koje žele jače procese, veću efikasnost, skalabilne sisteme i modernu infrastrukturu prilagođenu realnim poslovnim potrebama.",
+  hero_sub:"Pravimo ozbiljna digitalna rešenja za firme kojima trebaju jači procesi, veća efikasnost, skalabilni sistemi i moderna infrastruktura usklađena sa stvarnim poslovnim potrebama.",
   hero_btn1:"Započnimo razgovor", hero_btn2:"Pogledaj projekte",
-  stat_1:"Custom sistemi", stat_2:"Automatizacija", stat_3:"Infrastruktura",
+  stat_1:"Sistemi po meri", stat_2:"Automatizacija", stat_3:"Infrastruktura",
   tc_cmd1:"init build --tip=enterprise",
   tc_out1:"▸ Analiza poslovnih zahteva...",
   tc_out2:"// Mapiranje operativnih tokova",
@@ -170,19 +172,19 @@ sr: {
   metric_1:"Poslovni sistemi", metric_2:"AI radni tokovi",
   metric_3:"Cloud platforme", metric_4:"B2B / B2C operacije",
   ghost_services:"USLUGE", ghost_work:"RADOVI", ghost_about:"O NAMA",
-  services_label:"Usluge", services_h2:"Šta Pravimo",
+  services_label:"Usluge", services_h2:"Šta gradimo",
   services_desc:"Fokusirani smo na praktična softverska rešenja koja unapređuju poslovanje, smanjuju manuelni rad i pomažu firmama da rastu sigurnije.",
   card1_title:"Poslovni softver po meri", card1_desc:"Interni alati, portali, admin paneli i operativni sistemi prilagođeni stvarnim poslovnim procesima. Pravljeno za način na koji vaš tim zaista radi.",
   card2_title:"AI sistemi", card2_desc:"AI asistenti, obrada upita, pametni radni tokovi i alati za podršku internim procesima. Prava automatizacija koja uklanja prava uska grla.",
   card3_title:"Cloud platforme", card3_desc:"Skalabilna cloud okruženja, povezani poslovni moduli i moderna web infrastruktura za rastuće operacije. Pravljeno da traje.",
   tech_label:"Tehnologije i sposobnosti",
-  projects_label:"Izdvojeni radovi", projects_h2:"Sistemi Koje Gradimo",
+  projects_label:"Izdvojeni radovi", projects_h2:"Sistemi koje isporučujemo",
   projects_desc:"Izbor tipova rešenja, platformi i poslovnih sistema dizajniranih oko stvarnih operativnih potreba.",
   project1_type:"AI / Automatizacija upita", project1_title:"AI sistem za obradu upita i pripremu odgovora",
   project1_desc:"Sistem za prikupljanje ulaznih zahteva, izdvajanje ključnih informacija, strukturiranje upita i pomoć timovima da pripreme brze i ujednačene odgovore.", project1_tag:"AI sistem",
   project2_type:"Dokumenti / Praćenje", project2_title:"QR platforma za dokumente i upravljanje etiketama",
-  project2_desc:"Custom rešenje za kreiranje, praćenje, štampu i audit označenih dokumenata i internih zapisa kroz QR tokove rada.", project2_tag:"Interne operacije",
-  project3_type:"Betting / Platforma", project3_title:"Kompletna platforma za betting operacije",
+  project2_desc:"Rešenje po meri za kreiranje, praćenje, štampu i audit označenih dokumenata i internih zapisa kroz QR tokove rada.", project2_tag:"Interne operacije",
+  project3_type:"Betting / Platforma", project3_title:"Kompletna platforma za operacije klađenja",
   project3_desc:"Celoviti platformski koncept koji pokriva administraciju, operativne tokove, korisničku logiku i skalabilne back-office procese.", project3_tag:"Platformski sistem",
   project4_type:"Cloud / B2B / B2C", project4_title:"Cloud poslovna platforma sa B2B i B2C modulima",
   project4_desc:"Cloud sistem koji pokriva artikle, fakture, otpremnice, strukturu kataloga, varijante artikala, boje, veličine i višekanalne poslovne procese.", project4_tag:"Cloud ERP platforma",
@@ -212,7 +214,7 @@ sr: {
   why2_title:"Dugoročna struktura", why2_desc:"Cilj su sistemi koji mogu da rastu i razvijaju se, a ne brza rešenja koja pucaju kada vaš biznis poraste.",
   why3_title:"Moderna realizacija", why3_desc:"Čist UX, pouzdana arhitektura i ozbiljna pažnja kvalitetu implementacije na svakom sloju.",
   why4_title:"Stvarna efikasnost", why4_desc:"Cilj je ušteda vremena, manje manuelnog rada i merljiva operativna vrednost koja se akumulira.",
-  process_label:"Proces", process_h2:"Kako Pristupamo Projektima",
+  process_label:"Proces", process_h2:"Kako pristupamo projektima",
   process_desc:"Jasno, praktično i usklađeno sa realnim poslovnim potrebama - od prvog razgovora do finalnog sistema.",
   process1_title:"Razumevanje biznisa", process1_desc:"Prvo razumemo procese, uska grla i stvarne potrebe poslovanja - ne samo tehničke zahteve.",
   process2_title:"Definisanje pravog rešenja", process2_desc:"Oblikujemo sistem oko realne vrednosti, a ne oko nepotrebne kompleksnosti ili modnih tehnologija.",
@@ -232,9 +234,9 @@ sr: {
   about_p2_title:"Poslovno razmišljanje", about_p2_desc:"Svaka funkcija treba da ima svrhu, merljivu vrednost i praktičnu primenu - ništa ne postoji samo da lepo izgleda.",
   about_p3_title:"Moderna izvedba", about_p3_desc:"Čist UX, skalabilna arhitektura i prostor za budući rast bez tehničkog duga.",
   about_p4_title:"Pravo partnerstvo", about_p4_desc:"Radimo kao produžetak vašeg tima - ne kao vendor koji nestaje posle isporuke.",
-  contact_label:"Kontakt", contact_h2:"Hajde da napravimo nešto vredno",
-  contact_desc:"Ako tražite ozbiljnog softverskog partnera za custom sisteme, AI alate, cloud platforme ili automatizaciju poslovanja - Quadify Soft je spreman za razgovor.",
-  contact_note:"Otvoreni smo za razgovore o projektima i dugoročnoj saradnji.",
+  contact_label:"Kontakt", contact_h2:"Hajde da izgradimo nešto što pravi razliku",
+  contact_desc:"Ako tražite ozbiljnog softverskog partnera za sisteme po meri, AI alate, cloud platforme ili automatizaciju poslovanja, Quadify Soft je spreman za razgovor.",
+  contact_note:"Otvoreni smo za nove projekte i dugoročna partnerstva.",
   contact_response_badge:"Tipično vreme odgovora: ispod 24h",
   contact_btn:"Pošalji poruku",
   form_name_l:"Ime i prezime", form_name_ph:"Vaše ime i prezime",
@@ -243,11 +245,13 @@ sr: {
   form_service_l:"Usluga",
   form_budget_l:"Budžet",
   form_timeline_l:"Rok",
+  form_timeline_opt0:"Izaberi rok",
   form_timeline_opt1:"1-3 meseca",
   form_timeline_opt2:"3-6 meseci",
   form_timeline_opt3:"6-12 meseci",
   form_timeline_opt4:"12+ meseci",
   form_project_type_l:"Tip projekta",
+  form_project_type_opt0:"Izaberi tip projekta",
   form_project_type_opt1:"Novi sistem",
   form_project_type_opt2:"Nadogradnja postojećeg",
   form_project_type_opt3:"Automatizacija",
@@ -270,7 +274,7 @@ sr: {
   faq4_q:"Da li nudite dugoročnu podršku?",
   faq4_a:"Da. Nastavljamo kroz održavanje, optimizaciju i širenje funkcionalnosti po prioritetima vašeg poslovanja.",
   proof_label:"Društveni dokaz",
-  proof_h2:"Gradimo u partnerstvu sa ozbiljnim timovima",
+  proof_h2:"Gradimo zajedno sa ozbiljnim timovima",
   proof_desc:"Operativni softver daje rezultat kada biznis i tehnički tim rade zajedno. Tim pristupom vodimo svaki projekat.",
   proof_logo_label:"Primeri kategorija projekata",
   proof_q1:"\"Od razbacanih manuelnih zadataka do jednog pouzdanog procesa. Tim je isporučio jasno i strukturirano.\"",
@@ -285,19 +289,19 @@ sr: {
   call_i1:"- 20-30 minuta, bez prazne priče, fokus na biznis",
   call_i2:"- Brz pregled uskih grla i procesnih rizika",
   call_i3:"- Predlog puta implementacije i narednog koraka",
-  call_btn1:"Zatraži poziv emailom",
+  call_btn1:"Zatražite poziv putem emaila",
   call_btn2:"Pozovi odmah",
-  call_side_h3:"Poželjni termini za poziv",
+  call_side_h3:"Dostupni termini za poziv",
   call_side_p1:"Pon-Pet · 09:00-18:00 (CET)",
   call_side_p2:"Možete poslati i kratak opis projekta na quadifysoft@gmail.com, a mi se brzo javljamo.",
-  start_h2:"Spremni za ozbiljan sistem?",
+  start_h2:"Spremni da izgradimo pravi sistem?",
   start_desc:"Podelite izazove u procesima i poslovne ciljeve. Dobićete praktičan plan sa jasnim fazama, prioritetima i očekivanim rezultatima.",
   start_btn1:"Pokreni projekat",
   start_btn2:"Pozovi nas",
   mobile_call:"Pozovi",
   mobile_start:"Pokreni",
   quick_top:"Vrati na vrh",
-  quick_talk:"Započni razgovor",
+  quick_talk:"Započnimo razgovor o projektu",
   footer_copy:"Softver po meri, AI sistemi, cloud platforme i automatizacija poslovanja za firme kojima treba više od generičkog.",
   footer_col1:"Navigacija", footer_col2:"Usluge", footer_col3:"Kontakt", footer_col4:"Istraži",
   footer_rights:"© 2026 Quadify Soft. Sva prava zadržana.",
@@ -319,12 +323,17 @@ function setLang(lang) {
     if (t[k]) el.placeholder = t[k];
   });
   document.documentElement.lang = lang === 'sr' ? 'sr' : 'en';
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-sr').classList.toggle('active', lang === 'sr');
+  const enBtn = document.getElementById('btn-en');
+  const srBtn = document.getElementById('btn-sr');
+  if (enBtn) {
+    enBtn.classList.toggle('active', lang === 'en');
+    enBtn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+  if (srBtn) {
+    srBtn.classList.toggle('active', lang === 'sr');
+    srBtn.setAttribute('aria-pressed', lang === 'sr' ? 'true' : 'false');
+  }
   buildTicker(lang);
-  const budget = document.getElementById('contactBudget');
-  const budgetVal = document.getElementById('contactBudgetValue');
-  if (budget && budgetVal) budgetVal.textContent = formatBudgetValue(budget.value, lang);
 }
 
 /* ─── TICKER ─── */
@@ -510,25 +519,6 @@ function initSectionDepth() {
   sections.forEach((s) => observer.observe(s));
 }
 
-function formatBudgetValue(raw, lang) {
-  const value = Number(raw || 0);
-  if (!value) return lang === 'sr' ? 'EUR 0' : 'EUR 0';
-  return `EUR ${value.toLocaleString(lang === 'sr' ? 'sr-RS' : 'en-US')}`;
-}
-
-function initLeadFormUX() {
-  const budget = document.getElementById('contactBudget');
-  const budgetVal = document.getElementById('contactBudgetValue');
-  if (!budget || !budgetVal) return;
-
-  const sync = () => {
-    const lang = localStorage.getItem('qs_lang') || 'sr';
-    budgetVal.textContent = formatBudgetValue(budget.value, lang);
-  };
-  budget.addEventListener('input', sync);
-  sync();
-}
-
 function initLangSwitch() {
   const en = document.getElementById('btn-en');
   const sr = document.getElementById('btn-sr');
@@ -694,7 +684,6 @@ window.addEventListener('load', () => {
   initLangSwitch();
   initMobileNav();
   initActiveNav();
-  initLeadFormUX();
   initTrackingClicks();
   const form = document.getElementById('contactForm');
   if (form) form.addEventListener('submit', handleSubmit);
@@ -714,4 +703,6 @@ window.addEventListener('load', () => {
     document.getElementById('preloader').classList.add('done');
   }
 });
+
+
 

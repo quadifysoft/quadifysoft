@@ -121,8 +121,8 @@
           <span data-lang="nav_menu">Menu</span>
         </button>
         <div class="lang-sw">
-          <button id="btn-en" type="button">EN</button>
-          <button id="btn-sr" type="button">SR</button>
+          <button id="btn-en" type="button" aria-pressed="false">EN</button>
+          <button id="btn-sr" type="button" aria-pressed="false">SR</button>
         </div>
       </div>
     </div>
@@ -707,17 +707,17 @@
 
             <div class="cf-group">
               <label class="cf-label" data-lang="form_name_l">Name</label>
-              <input type="text" class="cf-input" name="name" id="contactName" data-lang-ph="form_name_ph" placeholder="Your name" required>
+              <input type="text" class="cf-input" name="name" id="contactName" data-lang-ph="form_name_ph" placeholder="Your name" autocomplete="name" required>
             </div>
 
             <div class="cf-group">
               <label class="cf-label" data-lang="form_email_l">Email</label>
-              <input type="email" class="cf-input" name="email" id="contactEmail" data-lang-ph="form_email_ph" placeholder="your@email.com" required>
+              <input type="email" class="cf-input" name="email" id="contactEmail" data-lang-ph="form_email_ph" placeholder="your@email.com" autocomplete="email" inputmode="email" required>
             </div>
 
             <div class="cf-group">
               <label class="cf-label" data-lang="form_company_l">Company</label>
-              <input type="text" class="cf-input" name="company" id="contactCompany" data-lang-ph="form_company_ph" placeholder="Company name">
+              <input type="text" class="cf-input" name="company" id="contactCompany" data-lang-ph="form_company_ph" placeholder="Company name" autocomplete="organization">
             </div>
 
             <div class="cf-group">
@@ -735,6 +735,7 @@
             <div class="cf-group">
               <label class="cf-label" data-lang="form_timeline_l">Timeline</label>
               <select class="cf-select" name="timeline" id="contactTimeline" required>
+                <option value="" data-lang="form_timeline_opt0" selected disabled>Select timeline</option>
                 <option value="1-3m" data-lang="form_timeline_opt1">1-3 months</option>
                 <option value="3-6m" data-lang="form_timeline_opt2">3-6 months</option>
                 <option value="6-12m" data-lang="form_timeline_opt3">6-12 months</option>
@@ -745,6 +746,7 @@
             <div class="cf-group">
               <label class="cf-label" data-lang="form_project_type_l">Project type</label>
               <select class="cf-select" name="project_type" id="contactProjectType" required>
+                <option value="" data-lang="form_project_type_opt0" selected disabled>Select project type</option>
                 <option value="new" data-lang="form_project_type_opt1">New build</option>
                 <option value="upgrade" data-lang="form_project_type_opt2">Upgrade existing system</option>
                 <option value="automation" data-lang="form_project_type_opt3">Automation</option>
@@ -764,7 +766,7 @@
               </button>
             </div>
 
-            <div class="cf-success" id="cfSuccess" data-lang="form_success">✓ Message sent - we'll be in touch soon.</div>
+            <div class="cf-success" id="cfSuccess" role="status" aria-live="polite" data-lang="form_success">✓ Message sent - we'll be in touch soon.</div>
           </form>
         </div>
       </div>
