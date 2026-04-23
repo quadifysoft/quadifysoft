@@ -132,10 +132,10 @@ function buildAutoresponse(data) {
   if (sr) {
     return `
       <div style="font-family:Arial,sans-serif;line-height:1.7;color:#111">
-        <p>Poštovani/a ${escapeHtml(data.name)},</p>
-        <p>Hvala što ste kontaktirali Quadify Soft. Primili smo vaš upit i pažljivo ćemo ga pregledati.</p>
-        <p>Ako je zahtev dobar fit za naš način rada, javićemo vam se u najkraćem roku sa predlogom narednih koraka.</p>
-        <p>Srdačno,<br><strong>Quadify Soft</strong><br>office@quadifysoft.rs</p>
+        <p>Postovani/a ${escapeHtml(data.name)},</p>
+        <p>Hvala sto ste kontaktirali Quadify Soft. Primili smo vas upit i pazljivo cemo ga pregledati.</p>
+        <p>Odgovoricemo vam u najkracem roku sa predlogom narednih koraka.</p>
+        <p>Srdacno,<br><strong>Quadify Soft</strong><br>office@quadifysoft.rs</p>
       </div>
     `;
   }
@@ -144,7 +144,7 @@ function buildAutoresponse(data) {
     <div style="font-family:Arial,sans-serif;line-height:1.7;color:#111">
       <p>Hello ${escapeHtml(data.name)},</p>
       <p>Thank you for contacting Quadify Soft. We received your inquiry and will review it carefully.</p>
-      <p>If the request is a good fit for the way we work, we will get back to you as soon as possible with suggested next steps.</p>
+      <p>We will get back to you as soon as possible with suggested next steps.</p>
       <p>Best regards,<br><strong>Quadify Soft</strong><br>office@quadifysoft.rs</p>
     </div>
   `;
@@ -201,7 +201,7 @@ async function handleContact(request, env) {
   await sendZohoMail(env, token, {
     toAddress: payload.email,
     subject: payload.site_language === 'sr'
-      ? 'Primili smo vaš upit - Quadify Soft'
+      ? 'Primili smo vas upit - Quadify Soft'
       : 'We received your inquiry - Quadify Soft',
     content: buildAutoresponse(payload)
   });
