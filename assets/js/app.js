@@ -576,6 +576,54 @@ function initTrackingClicks() {
 }
 
 /* ─── MOBILE NAV ─── */
+function initCleanAnchorNavigation() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const getHeaderOffset = () => {
+    const topbar = document.querySelector('.topbar');
+    const navShell = document.querySelector('.nav-shell');
+    const topbarH = topbar && getComputedStyle(topbar).display !== 'none' ? topbar.offsetHeight : 0;
+    const navH = navShell ? navShell.offsetHeight : 0;
+    return topbarH + navH + 18;
+  };
+  const getTarget = (hash) => {
+    if (!hash || hash === '#') return null;
+    try {
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch {
+      return document.getElementById(hash.slice(1));
+    }
+  };
+  const cleanUrl = () => {
+    if (!window.location.hash) return;
+    window.history.replaceState({}, '', `${window.location.pathname}${window.location.search}`);
+  };
+  const scrollToTarget = (target) => {
+    const y = target.id === 'home' ? 0 : Math.max(0, target.getBoundingClientRect().top + window.scrollY - getHeaderOffset());
+    window.scrollTo({ top: y, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  };
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = getTarget(link.getAttribute('href'));
+    if (!target) return;
+
+    e.preventDefault();
+    scrollToTarget(target);
+    cleanUrl();
+  });
+
+  if (window.location.hash) {
+    const target = getTarget(window.location.hash);
+    if (target) {
+      window.setTimeout(() => {
+        scrollToTarget(target);
+        cleanUrl();
+      }, 80);
+    }
+  }
+}
+
 function initMobileNav() {
   const nav = document.querySelector('.nav-shell .nav');
   const toggle = document.getElementById('navMobileToggle');
@@ -732,6 +780,7 @@ window.addEventListener('load', () => {
   initSectionDepth();
   initLangSwitch();
   initMobileNav();
+  initCleanAnchorNavigation();
   initActiveNav();
   initTrackingClicks();
   const form = document.getElementById('contactForm');
@@ -744,7 +793,7 @@ window.addEventListener('load', () => {
     success.textContent = T[lang].form_success;
     setTimeout(() => { success.classList.remove('is-visible'); }, 9000);
     params.delete('submitted');
-    const clean = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}${window.location.hash || ''}`;
+    const clean = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}`;
     window.history.replaceState({}, '', clean);
   }
   window.setTimeout(() => document.body.classList.add('page-ready'), 120);
