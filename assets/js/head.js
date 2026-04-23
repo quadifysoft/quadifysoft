@@ -14,6 +14,18 @@ if (window.location.hostname.endsWith('github.io')) {
   window.location.replace(canonicalUrl);
 }
 
+const cleanPathRedirects = {
+  '/programiranje-kraljevo.html': '/programiranje-kraljevo/',
+  '/izrada-web-aplikacija-kraljevo.html': '/izrada-web-aplikacija-kraljevo/',
+  '/softver-po-meri-kraljevo.html': '/softver-po-meri-kraljevo/',
+  '/privacy.html': '/privacy/',
+  '/terms.html': '/terms/'
+};
+
+if (cleanPathRedirects[window.location.pathname]) {
+  window.location.replace(`${cleanPathRedirects[window.location.pathname]}${window.location.search}${window.location.hash}`);
+}
+
 window.QS_GA4_ID = window.QS_GA4_ID || 'G-XXXXXXXXXX';
 if (window.QS_GA4_ID && window.QS_GA4_ID !== 'G-XXXXXXXXXX') {
   const gaScript = document.createElement('script');
