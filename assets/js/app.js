@@ -4,7 +4,7 @@ en: {
   topbar_text:"Software partner for serious companies",
   logo_subtext:"Software / AI / Cloud",
   nav_home:"Home", nav_services:"Services", nav_projects:"Projects",
-  nav_cases:"Case Studies", nav_results:"Results", nav_process:"Process", nav_engage:"Engagement", nav_why:"Why us", nav_about:"About", nav_faq:"FAQ", nav_call:"Book Call", nav_more:"More", nav_menu:"Menu", nav_open_menu:"Open menu", nav_close_menu:"Close menu", nav_contact:"Contact", nav_global:"Global", nav_cta:"Start",
+  nav_cases:"Case Studies", nav_results:"Results", nav_process:"Process", nav_engage:"Engagement", nav_about:"About", nav_faq:"FAQ", nav_call:"Book Call", nav_menu:"Menu", nav_open_menu:"Open menu", nav_close_menu:"Close menu", nav_contact:"Contact", nav_global:"Global",
   hero_badge:"SERIOUS SOFTWARE FOR SERIOUS BUSINESSES",
   hero_line1:"CUSTOM", hero_line2:"SOFTWARE.", hero_line3:"AI / CLOUD.",
   hero_sub:"Quadify Soft builds reliable digital systems for companies that need stronger workflows, higher efficiency, scalable architecture, and modern infrastructure aligned with real business needs.",
@@ -89,7 +89,6 @@ en: {
   form_email_l:"Email", form_email_ph:"your@email.com",
   form_company_l:"Company", form_company_ph:"Company name",
   form_service_l:"Service",
-  form_budget_l:"Budget",
   form_timeline_l:"Timeline",
   form_timeline_opt0:"Select timeline",
   form_timeline_opt1:"1-3 months",
@@ -155,8 +154,6 @@ en: {
   start_desc:"Share your workflow challenges and goals. We will propose a practical roadmap with clear phases, priorities, and expected outcomes.",
   start_btn1:"Start a Project",
   start_btn2:"Call Us",
-  mobile_call:"Call",
-  mobile_start:"Start Project",
   quick_top:"Back to Top",
   quick_talk:"Start a Project Conversation",
   footer_copy:"Custom software, AI systems, cloud platforms, and business automation for companies that need more than generic.",
@@ -169,7 +166,7 @@ sr: {
   topbar_text:"Softverski partner za ozbiljne firme",
   logo_subtext:"Softver / AI / Cloud",
   nav_home:"Početna", nav_services:"Usluge", nav_projects:"Projekti",
-  nav_cases:"Studije", nav_results:"Rezultati", nav_process:"Proces", nav_engage:"Saradnja", nav_why:"Zašto mi", nav_about:"O nama", nav_faq:"FAQ", nav_call:"Poziv", nav_more:"Više", nav_menu:"Meni", nav_open_menu:"Otvori meni", nav_close_menu:"Zatvori meni", nav_contact:"Kontakt", nav_global:"Globalno", nav_cta:"Pokreni",
+  nav_cases:"Studije", nav_results:"Rezultati", nav_process:"Proces", nav_engage:"Saradnja", nav_about:"O nama", nav_faq:"FAQ", nav_call:"Poziv", nav_menu:"Meni", nav_open_menu:"Otvori meni", nav_close_menu:"Zatvori meni", nav_contact:"Kontakt", nav_global:"Globalno",
   hero_badge:"OZBILJAN SOFTVER ZA OZBILJNE FIRME",
   hero_line1:"SOFTVER", hero_line2:"PO MERI.", hero_line3:"AI / CLOUD.",
   hero_sub:"Quadify Soft razvija pouzdane digitalne sisteme za firme kojima trebaju jači procesi, veća efikasnost, skalabilna arhitektura i moderna infrastruktura usklađena sa stvarnim poslovnim potrebama.",
@@ -254,7 +251,6 @@ sr: {
   form_email_l:"Email", form_email_ph:"vas@email.com",
   form_company_l:"Kompanija", form_company_ph:"Naziv kompanije",
   form_service_l:"Usluga",
-  form_budget_l:"Budžet",
   form_timeline_l:"Rok",
   form_timeline_opt0:"Izaberi rok",
   form_timeline_opt1:"1-3 meseca",
@@ -320,8 +316,6 @@ sr: {
   start_desc:"Podelite izazove u procesima i poslovne ciljeve. Dobićete praktičan plan sa jasnim fazama, prioritetima i očekivanim rezultatima.",
   start_btn1:"Pokreni projekat",
   start_btn2:"Pozovi nas",
-  mobile_call:"Pozovi",
-  mobile_start:"Pokreni",
   quick_top:"Vrati na vrh",
   quick_talk:"Započnimo razgovor o projektu",
   footer_copy:"Softver po meri, AI sistemi, cloud platforme i automatizacija poslovanja za firme kojima treba više od generičkog.",
@@ -469,34 +463,6 @@ const iv = setInterval(() => {
     requestAnimationFrame(frame);
   }
   frame();
-})();
-
-/* ─── CURSOR ─── */
-(function() {
-  return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const dot = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-  if (!dot || !ring) return;
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-
-  function update() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    dot.style.transform = `translate(${mx - 3}px, ${my - 3}px)`;
-    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-    requestAnimationFrame(update);
-  }
-  update();
-
-  document.querySelectorAll('a, button, .svc-card, .proj-card, .case-card, .why-card, .proc-step, .apoint, .tech-chip').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-  window.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
-  window.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
 })();
 
 /* ─── SCROLL REVEAL ─── */

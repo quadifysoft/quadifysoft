@@ -20,10 +20,7 @@ Static website for Quadify Soft.
 |  |  |- app.js
 |  |  `- head.js
 |  `- img/
-|     |- favicon.png
-|     |- logo.png
-|     |- logo-mark.png
-|     `- preview.png
+|     `- logo-mark.png
 |- .htaccess
 |- robots.txt
 `- sitemap.xml
