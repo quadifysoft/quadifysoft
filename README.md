@@ -7,9 +7,7 @@ Static website for Quadify Soft.
 ```text
 .
 |- index.html
-|- programiranje-kraljevo.html
-|- izrada-web-aplikacija-kraljevo.html
-|- softver-po-meri-kraljevo.html
+|- legacy redirect pages
 |- privacy.html
 |- terms.html
 |- google34c1d7f5ad7d92b6.html
@@ -24,10 +22,7 @@ Static website for Quadify Soft.
 |  `- img/
 |     |- favicon.png
 |     |- logo.png
-|     |- logo.webp
 |     |- logo-mark.png
-|     |- logo-mark.webp
-|     |- logo-modern.svg
 |     `- preview.png
 |- .htaccess
 |- robots.txt
@@ -37,7 +32,7 @@ Static website for Quadify Soft.
 ## Notes
 
 - `index.html` links to external `assets/css/site.css`, `assets/js/head.js`, and `assets/js/app.js`.
-- Legal pages have a single source of truth in root: `privacy.html` and `terms.html`.
+- Legal pages redirect to clean routes: `/privacy/` and `/terms/`.
 - Contact form posts to `/api/contact`, intended to be handled by the Cloudflare Worker in `cloudflare/contact-worker.js`.
 - The Worker sends the internal lead notification and visitor autoresponse through Zoho Mail API.
 - `CNAME` is set to `quadifysoft.rs` for GitHub Pages custom domain binding.
