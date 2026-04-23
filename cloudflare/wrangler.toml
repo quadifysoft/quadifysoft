@@ -1,0 +1,9 @@
+name = "quadifysoft-contact"
+main = "contact-worker.js"
+compatibility_date = "2026-04-23"
+
+[vars]
+ZOHO_DC = "eu"
+ZOHO_FROM = "office@quadifysoft.rs"
+ZOHO_TO = "office@quadifysoft.rs"
+ALLOWED_ORIGIN = "https://quadifysoft.rs"

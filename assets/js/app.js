@@ -106,7 +106,7 @@ en: {
   form_service_opt4:"Other / Consultation",
   form_message_l:"Message", form_message_ph:"Tell us about your project, goals, and timeline...",
   form_success:"We received your inquiry. We will get back to you as soon as possible.",
-  form_autoresponse:"Thanks for contacting Quadify Soft. We received your inquiry and will get back to you as soon as possible.",
+  form_autoresponse:"Thanks for contacting Quadify Soft.\n\nWe received your project inquiry and will review it carefully. If the request is a good fit, we will get back to you as soon as possible with suggested next steps.\n\nBest regards,\nQuadify Soft",
   form_error:"Message sending failed. Please email office@quadifysoft.rs or call +381 60 311 5955.",
   faq_label:"FAQ",
   faq_h2:"Answers to common project questions",
@@ -248,7 +248,7 @@ sr: {
   contact_label:"Kontakt", contact_h2:"Hajde da izgradimo sistem koji pravi razliku",
   contact_desc:"Ako vam treba ozbiljan softverski partner za sisteme po meri, AI alate, cloud platforme ili automatizaciju poslovanja, Quadify Soft je spreman za razgovor.",
   contact_note:"Otvoreni smo za nove projekte i dugoročna partnerstva.",
-  contact_response_badge:"Tipično vreme odgovora: ispod 24h",
+  contact_response_badge:"Očekivano vreme odgovora: ispod 24h",
   contact_btn:"Pošalji poruku",
   form_name_l:"Ime i prezime", form_name_ph:"Vaše ime i prezime",
   form_email_l:"Email", form_email_ph:"vas@email.com",
@@ -271,7 +271,7 @@ sr: {
   form_service_opt4:"Ostalo / Konsultacija",
   form_message_l:"Poruka", form_message_ph:"Recite nam nešto o projektu, ciljevima i rokovima...",
   form_success:"Primili smo vaš upit. Javićemo vam se u najkraćem roku.",
-  form_autoresponse:"Hvala što ste kontaktirali Quadify Soft. Primili smo vaš upit i javićemo vam se u najkraćem roku.",
+  form_autoresponse:"Hvala što ste kontaktirali Quadify Soft.\n\nPrimili smo vaš upit za projekat i pažljivo ćemo ga pregledati. Ako je zahtev dobar fit za naš način rada, javićemo vam se u najkraćem roku sa predlogom narednih koraka.\n\nSrdačno,\nQuadify Soft",
   form_error:"Slanje poruke nije uspelo. Pišite na office@quadifysoft.rs ili pozovite +381 60 311 5955.",
   faq_label:"FAQ",
   faq_h2:"Odgovori na česta pitanja o projektu",
@@ -344,6 +344,8 @@ function setLang(lang) {
     const k = el.getAttribute('data-lang-ph');
     if (t[k]) el.placeholder = t[k];
   });
+  const formLang = document.getElementById('contactLanguage');
+  if (formLang) formLang.value = lang;
   document.documentElement.lang = lang === 'sr' ? 'sr' : 'en';
   const enBtn = document.getElementById('btn-en');
   const srBtn = document.getElementById('btn-sr');
@@ -735,9 +737,14 @@ function initActiveNav() {
 }
 
 /* ─── FORM ─── */
-function handleSubmit() {
+async function handleSubmit(e) {
+  if (e) e.preventDefault();
   const form = document.getElementById('contactForm');
   if (!form) return;
+  const lang = getCurrentLang();
+  const formLang = document.getElementById('contactLanguage');
+  if (formLang) formLang.value = lang;
+  const success = document.getElementById('cfSuccess');
   const submitBtn = form.querySelector('button[type="submit"]');
   if (submitBtn) {
     submitBtn.disabled = true;
@@ -749,20 +756,42 @@ function handleSubmit() {
     timeline: form.querySelector('#contactTimeline')?.value || 'na',
     project_type: form.querySelector('#contactProjectType')?.value || 'na'
   };
-  const replyTo = document.getElementById('contactReplyTo');
-  if (replyTo) replyTo.value = payload.email;
-  const next = document.getElementById('contactNext');
-  if (next) {
-    const u = new URL(window.location.href);
-    u.searchParams.set('submitted', '1');
-    u.hash = 'contact';
-    next.value = u.toString();
-  }
   qsTrack('form_submit', {
     service: payload.service || 'na',
     timeline: payload.timeline || 'na',
     project_type: payload.project_type || 'na'
   });
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || 'Message sending failed');
+    }
+    if (success) {
+      success.classList.remove('error');
+      success.classList.add('is-visible');
+      success.textContent = T[lang].form_success;
+      setTimeout(() => { success.classList.remove('is-visible'); }, 9000);
+    }
+    form.reset();
+    if (formLang) formLang.value = lang;
+  } catch (error) {
+    console.error(error);
+    if (success) {
+      success.classList.add('error', 'is-visible');
+      success.textContent = T[lang].form_error;
+    }
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+    }
+  }
 }
 
 /* ─── INIT ─── */

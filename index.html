@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quadify Soft | Custom Software, AI & Cloud Systems</title>
-<meta name="description" content="Quadify Soft develops custom software, AI systems, cloud platforms, and business automation for ambitious companies worldwide.">
+<title>Quadify Soft | Izrada softvera po meri, AI i cloud resenja</title>
+<meta name="description" content="Quadify Soft razvija softver po meri, web aplikacije, AI sisteme i cloud resenja za kompanije kojima treba ozbiljna digitalna infrastruktura.">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="format-detection" content="telephone=no">
@@ -16,17 +16,17 @@
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="256x256" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta property="og:title" content="Quadify Soft | Custom Software, AI & Cloud Systems">
+<meta property="og:title" content="Quadify Soft | Izrada softvera po meri, AI i cloud resenja">
 <meta property="og:site_name" content="Quadify Soft">
-<meta property="og:description" content="Custom software, AI systems, cloud platforms, and business automation for ambitious companies worldwide.">
+<meta property="og:description" content="Softver po meri, web aplikacije, AI sistemi i cloud resenja za kompanije kojima treba ozbiljan digitalni partner.">
 <meta property="og:image" content="https://quadifysoft.rs/assets/img/preview.png">
 <meta property="og:url" content="https://quadifysoft.rs/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sr_RS">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Quadify Soft | Custom Software, AI & Cloud Systems">
-<meta name="twitter:description" content="Custom software, AI systems, cloud platforms, and business automation for ambitious companies worldwide.">
+<meta name="twitter:title" content="Quadify Soft | Izrada softvera po meri, AI i cloud resenja">
+<meta name="twitter:description" content="Softver po meri, web aplikacije, AI sistemi i cloud resenja za kompanije kojima treba ozbiljan digitalni partner.">
 <meta name="twitter:image" content="https://quadifysoft.rs/assets/img/preview.png">
 <script src="assets/js/head.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +40,7 @@
   "alternateName": ["QuadifySoft", "Quadify Soft"],
   "url": "https://quadifysoft.rs/",
   "logo": "https://quadifysoft.rs/assets/img/logo.png",
+  "description": "Izrada softvera po meri, AI sistema i cloud resenja za ozbiljne kompanije.",
   "email": "office@quadifysoft.rs",
   "telephone": "+381603115955"
 }
@@ -61,7 +62,7 @@
   "name": "Quadify Soft",
   "url": "https://quadifysoft.rs/",
   "image": "https://quadifysoft.rs/assets/img/preview.png",
-  "description": "Custom software development, AI systems, cloud platforms, and business automation for ambitious companies worldwide.",
+  "description": "Izrada softvera po meri, web aplikacija, AI sistema i cloud platformi za kompanije kojima treba ozbiljan digitalni partner.",
   "email": "office@quadifysoft.rs",
   "telephone": "+381603115955",
   "areaServed": {
@@ -73,10 +74,11 @@
     "addressCountry": "RS"
   },
   "serviceType": [
-    "Custom software development",
-    "AI systems",
-    "Cloud platforms",
-    "Business automation"
+    "Izrada softvera po meri",
+    "Web aplikacije",
+    "AI sistemi",
+    "Cloud platforme",
+    "Poslovna automatizacija"
   ]
 }
 </script>
@@ -132,10 +134,7 @@
     <div class="nav wrap">
       <a href="#home" class="logo-link">
         <div class="logo-icon">
-          <picture>
-            <source srcset="assets/img/logo-mark.webp" type="image/webp">
-            <img src="assets/img/logo-mark.png" alt="Quadify Soft" class="logo-img" width="60" height="60" fetchpriority="high" decoding="async">
-          </picture>
+          <img src="assets/img/logo-mark.png" alt="Quadify Soft" class="logo-img" width="60" height="60" fetchpriority="high" decoding="async">
         </div>
         <div>
           <div class="logo-name">Quadify Soft</div>
@@ -767,12 +766,8 @@
         </div>
 
         <div class="contact-body">
-          <form class="cf-grid" id="contactForm" action="https://formsubmit.co/office@quadifysoft.rs" method="POST">
-            <input type="hidden" name="_subject" value="New project inquiry - Quadify Soft">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_replyto" id="contactReplyTo" value="">
-            <input type="hidden" name="_next" id="contactNext" value="https://quadifysoft.rs/?submitted=1#contact">
-            <input type="hidden" name="_captcha" value="false">
+          <form class="cf-grid" id="contactForm" action="/api/contact" method="POST">
+            <input type="hidden" name="site_language" id="contactLanguage" value="en">
             <input type="text" class="cf-honeypot" name="_honey" tabindex="-1" autocomplete="off">
 
             <div class="cf-group">
