@@ -11,10 +11,10 @@ en: {
   hero_btn1:"Start a Conversation", hero_btn2:"See Selected Work",
   stat_1:"Custom Systems", stat_2:"Automation", stat_3:"Infrastructure",
   tc_cmd1:"init build --type=enterprise",
-  tc_out1:"▸ Analyzing business requirements...",
+  tc_out1:"> Analyzing business requirements...",
   tc_out2:"// Mapping operational workflows",
-  tc_out3:"▸ Loading AI modules...",
-  tc_out4:"✓ System architecture ready",
+  tc_out3:"> Loading AI modules...",
+  tc_out4:"OK System architecture ready",
   metric_1:"Custom business systems", metric_2:"AI-powered workflows",
   metric_3:"Cloud platforms", metric_4:"B2B / B2C ops",
   ghost_services:"SERVICES", ghost_work:"WORK", ghost_about:"ABOUT",
@@ -105,7 +105,7 @@ en: {
   form_service_opt2:"AI Systems", form_service_opt3:"Cloud Platforms",
   form_service_opt4:"Other / Consultation",
   form_message_l:"Message", form_message_ph:"Tell us about your project, goals, and timeline...",
-  form_success:"✓ We received your inquiry. We will get back to you as soon as possible.",
+  form_success:"We received your inquiry. We will get back to you as soon as possible.",
   form_autoresponse:"Thanks for contacting Quadify Soft. We received your inquiry and will get back to you as soon as possible.",
   form_error:"Message sending failed. Please email office@quadifysoft.rs or call +381 60 311 5955.",
   faq_label:"FAQ",
@@ -161,7 +161,7 @@ en: {
   quick_talk:"Start a Project Conversation",
   footer_copy:"Custom software, AI systems, cloud platforms, and business automation for companies that need more than generic.",
   footer_col1:"Navigation", footer_col2:"Services", footer_col3:"Contact", footer_col4:"Explore",
-  footer_rights:"© 2026 Quadify Soft. All rights reserved.",
+  footer_rights:"2026 Quadify Soft. All rights reserved.",
   footer_privacy:"Privacy", footer_terms:"Terms",
   ticker_items:["Custom-built solutions","Business automation","AI-powered workflows","Long-term digital systems","Cloud infrastructure","Scalable platforms","Internal tools","Smart operations","Enterprise software"]
 },
@@ -176,10 +176,10 @@ sr: {
   hero_btn1:"Započnimo razgovor", hero_btn2:"Pogledaj projekte",
   stat_1:"Sistemi po meri", stat_2:"Automatizacija", stat_3:"Infrastruktura",
   tc_cmd1:"init build --tip=enterprise",
-  tc_out1:"▸ Analiza poslovnih zahteva...",
+  tc_out1:"> Analiza poslovnih zahteva...",
   tc_out2:"// Mapiranje operativnih tokova",
-  tc_out3:"▸ Učitavanje AI modula...",
-  tc_out4:"✓ Arhitektura sistema spremna",
+  tc_out3:"> Učitavanje AI modula...",
+  tc_out4:"OK Arhitektura sistema spremna",
   metric_1:"Poslovni sistemi", metric_2:"AI radni tokovi",
   metric_3:"Cloud platforme", metric_4:"B2B / B2C operacije",
   ghost_services:"USLUGE", ghost_work:"RADOVI", ghost_about:"O NAMA",
@@ -270,7 +270,7 @@ sr: {
   form_service_opt2:"AI sistemi", form_service_opt3:"Cloud platforme",
   form_service_opt4:"Ostalo / Konsultacija",
   form_message_l:"Poruka", form_message_ph:"Recite nam nešto o projektu, ciljevima i rokovima...",
-  form_success:"✓ Primili smo vaš upit. Javićemo vam se u najkraćem roku.",
+  form_success:"Primili smo vaš upit. Javićemo vam se u najkraćem roku.",
   form_autoresponse:"Hvala što ste kontaktirali Quadify Soft. Primili smo vaš upit i javićemo vam se u najkraćem roku.",
   form_error:"Slanje poruke nije uspelo. Pišite na office@quadifysoft.rs ili pozovite +381 60 311 5955.",
   faq_label:"FAQ",
@@ -326,7 +326,7 @@ sr: {
   quick_talk:"Započnimo razgovor o projektu",
   footer_copy:"Softver po meri, AI sistemi, cloud platforme i automatizacija poslovanja za firme kojima treba više od generičkog.",
   footer_col1:"Navigacija", footer_col2:"Usluge", footer_col3:"Kontakt", footer_col4:"Istraži",
-  footer_rights:"© 2026 Quadify Soft. Sva prava zadržana.",
+  footer_rights:"2026 Quadify Soft. Sva prava zadržana.",
   footer_privacy:"Privatnost", footer_terms:"Uslovi",
   ticker_items:["Rešenja po meri","Automatizacija poslovanja","AI radni tokovi","Dugoročni sistemi","Cloud infrastruktura","Skalabilne platforme","Interni alati","Pametne operacije","Enterprise softver"]
 }
@@ -631,20 +631,20 @@ function initMobileNav() {
     nav.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', getLabel(false));
-    if (icon) icon.textContent = '☰';
+    if (icon) icon.textContent = '=';
     document.body.classList.remove('nav-lock');
   };
   const toggleMenu = () => {
     const open = nav.classList.toggle('menu-open');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     toggle.setAttribute('aria-label', getLabel(open));
-    if (icon) icon.textContent = open ? '✕' : '☰';
+    if (icon) icon.textContent = open ? 'x' : '=';
     document.body.classList.toggle('nav-lock', open && window.innerWidth <= 768);
   };
 
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-label', getLabel(false));
-  if (icon) icon.textContent = '☰';
+  if (icon) icon.textContent = '=';
   toggle.addEventListener('click', toggleMenu);
 
   nav.querySelectorAll('.nav-links a').forEach(link => {
