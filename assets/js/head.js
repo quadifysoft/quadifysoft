@@ -1,4 +1,4 @@
-﻿window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 
 if (window.location.hostname.endsWith('github.io')) {
