@@ -15,9 +15,12 @@ if (window.location.hostname.endsWith('github.io')) {
 }
 
 const cleanPathRedirects = {
-  '/programiranje-kraljevo.html': '/programiranje-kraljevo/',
-  '/izrada-web-aplikacija-kraljevo.html': '/izrada-web-aplikacija-kraljevo/',
-  '/softver-po-meri-kraljevo.html': '/softver-po-meri-kraljevo/',
+  '/programiranje-kraljevo.html': '/',
+  '/izrada-web-aplikacija-kraljevo.html': '/',
+  '/softver-po-meri-kraljevo.html': '/',
+  '/programiranje-kraljevo/': '/',
+  '/izrada-web-aplikacija-kraljevo/': '/',
+  '/softver-po-meri-kraljevo/': '/',
   '/privacy.html': '/privacy/',
   '/terms.html': '/terms/'
 };

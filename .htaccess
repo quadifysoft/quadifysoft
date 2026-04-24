@@ -2,9 +2,12 @@
   RewriteEngine On
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-  RewriteRule ^programiranje-kraljevo\.html$ /programiranje-kraljevo/ [L,R=301]
-  RewriteRule ^izrada-web-aplikacija-kraljevo\.html$ /izrada-web-aplikacija-kraljevo/ [L,R=301]
-  RewriteRule ^softver-po-meri-kraljevo\.html$ /softver-po-meri-kraljevo/ [L,R=301]
+  RewriteRule ^programiranje-kraljevo\.html$ / [L,R=301]
+  RewriteRule ^izrada-web-aplikacija-kraljevo\.html$ / [L,R=301]
+  RewriteRule ^softver-po-meri-kraljevo\.html$ / [L,R=301]
+  RewriteRule ^programiranje-kraljevo/?$ / [L,R=301]
+  RewriteRule ^izrada-web-aplikacija-kraljevo/?$ / [L,R=301]
+  RewriteRule ^softver-po-meri-kraljevo/?$ / [L,R=301]
   RewriteRule ^privacy\.html$ /privacy/ [L,R=301]
   RewriteRule ^terms\.html$ /terms/ [L,R=301]
 </IfModule>
