@@ -127,27 +127,88 @@ function buildInternalEmail(data) {
   `;
 }
 
+function buildEmailShell({ preheader, title, intro, body, closing }) {
+  return `
+    <!doctype html>
+    <html lang="sr">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${escapeHtml(title)}</title>
+      </head>
+      <body style="margin:0;padding:0;background:#f3f5f7;font-family:Arial,sans-serif;color:#111827;">
+        <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">${escapeHtml(preheader)}</div>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;background:#f3f5f7;">
+          <tr>
+            <td align="center" style="padding:32px 16px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;border-collapse:collapse;background:#ffffff;border:1px solid #e5e7eb;border-radius:18px;overflow:hidden;">
+                <tr>
+                  <td style="padding:28px 32px;background:#020509;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                      <tr>
+                        <td style="vertical-align:middle;">
+                          <img src="https://quadifysoft.rs/assets/img/logo-mark.png" alt="Quadify Soft" width="56" height="56" style="display:block;border:0;width:56px;height:56px;">
+                        </td>
+                        <td style="vertical-align:middle;padding-left:14px;">
+                          <div style="font-size:22px;line-height:1.1;font-weight:700;color:#ffffff;">Quadify Soft</div>
+                          <div style="font-size:13px;line-height:1.5;color:#9fb0c1;">Custom Software / AI / Cloud</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:32px;">
+                    <h1 style="margin:0 0 16px;font-size:28px;line-height:1.2;color:#111827;">${escapeHtml(title)}</h1>
+                    <p style="margin:0 0 14px;font-size:16px;line-height:1.75;color:#374151;">${intro}</p>
+                    ${body}
+                    <p style="margin:20px 0 0;font-size:16px;line-height:1.75;color:#374151;">${closing}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:20px 32px;border-top:1px solid #e5e7eb;background:#fafafa;">
+                    <div style="font-size:14px;line-height:1.7;color:#4b5563;">
+                      <strong style="color:#111827;">Quadify Soft</strong><br>
+                      <a href="mailto:office@quadifysoft.rs" style="color:#0f766e;text-decoration:none;">office@quadifysoft.rs</a><br>
+                      <a href="tel:+381603115955" style="color:#0f766e;text-decoration:none;">+381 60 311 5955</a><br>
+                      <a href="https://quadifysoft.rs/" style="color:#0f766e;text-decoration:none;">quadifysoft.rs</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+  `;
+}
+
 function buildAutoresponse(data) {
   const sr = data.site_language === 'sr';
   if (sr) {
-    return `
-      <div style="font-family:Arial,sans-serif;line-height:1.7;color:#111">
-        <p>Postovani/a ${escapeHtml(data.name)},</p>
-        <p>Hvala sto ste kontaktirali Quadify Soft. Primili smo vas upit i pazljivo cemo ga pregledati.</p>
-        <p>Odgovoricemo vam u najkracem roku sa predlogom narednih koraka.</p>
-        <p>Srdacno,<br><strong>Quadify Soft</strong><br>office@quadifysoft.rs</p>
-      </div>
-    `;
+    return buildEmailShell({
+      preheader: 'Primili smo vaš upit i javljamo vam se uskoro.',
+      title: 'Primili smo vaš upit',
+      intro: `Poštovani/a ${escapeHtml(data.name)},`,
+      body: `
+        <p style="margin:0 0 14px;font-size:16px;line-height:1.75;color:#374151;">Hvala što ste kontaktirali Quadify Soft. Primili smo vaš upit i pažljivo ćemo ga pregledati.</p>
+        <p style="margin:0 0 14px;font-size:16px;line-height:1.75;color:#374151;">Javićemo vam se u najkraćem roku sa predlogom narednih koraka.</p>
+      `,
+      closing: 'Srdačno,'
+    });
   }
 
-  return `
-    <div style="font-family:Arial,sans-serif;line-height:1.7;color:#111">
-      <p>Hello ${escapeHtml(data.name)},</p>
-      <p>Thank you for contacting Quadify Soft. We received your inquiry and will review it carefully.</p>
-      <p>We will get back to you as soon as possible with suggested next steps.</p>
-      <p>Best regards,<br><strong>Quadify Soft</strong><br>office@quadifysoft.rs</p>
-    </div>
-  `;
+  return buildEmailShell({
+    preheader: 'We received your inquiry and will get back to you shortly.',
+    title: 'We received your inquiry',
+    intro: `Hello ${escapeHtml(data.name)},`,
+    body: `
+      <p style="margin:0 0 14px;font-size:16px;line-height:1.75;color:#374151;">Thank you for contacting Quadify Soft. We received your inquiry and will review it carefully.</p>
+      <p style="margin:0 0 14px;font-size:16px;line-height:1.75;color:#374151;">We will get back to you as soon as possible with suggested next steps.</p>
+    `,
+    closing: 'Best regards,'
+  });
 }
 
 async function handleContact(request, env) {
@@ -201,7 +262,7 @@ async function handleContact(request, env) {
   await sendZohoMail(env, token, {
     toAddress: payload.email,
     subject: payload.site_language === 'sr'
-      ? 'Primili smo vas upit - Quadify Soft'
+      ? 'Primili smo vaš upit - Quadify Soft'
       : 'We received your inquiry - Quadify Soft',
     content: buildAutoresponse(payload)
   });
