@@ -75,7 +75,7 @@ en: {
   about_label:"About", about_h2:"Built for companies that want more than a generic solution",
   about_desc1:"Quadify Soft builds software that solves real business problems, not just interfaces that look good without creating value.",
   about_desc2:"Our goal is to create systems that bring structure, speed, clarity, and long-term value to teams and operations. We think in business outcomes, not feature lists.",
-  anum_1:"Focus", anum_2:"Powered", anum_3:"Scalable",
+  anum_1:"Focus", anum_2:"Powered", anum_3:"Ready",
   about_p1_title:"Serious approach", about_p1_desc:"We build with long-term stability, structure, and business logic in mind at every decision.",
   about_p2_title:"Business-first thinking", about_p2_desc:"Every feature should have a purpose, measurable value, and practical use. Nothing exists just to look good.",
   about_p3_title:"Modern execution", about_p3_desc:"Clean UX, scalable architecture, and plenty of room for future growth without technical debt.",
@@ -104,7 +104,7 @@ en: {
   form_service_opt2:"AI Systems", form_service_opt3:"Cloud Platforms",
   form_service_opt4:"Other / Consultation",
   form_message_l:"Message", form_message_ph:"Tell us about your project, goals, and timeline...",
-  form_success:"We received your inquiry. We will get back to you as soon as possible.",
+  form_success:"We received your inquiry. We will get back to you shortly.",
   form_autoresponse:"Thanks for contacting Quadify Soft.\n\nWe received your project inquiry and will review it carefully. If the request is a good fit, we will get back to you as soon as possible with suggested next steps.\n\nBest regards,\nQuadify Soft",
   form_error:"Message sending failed. Please email office@quadifysoft.rs or call +381 60 311 5955.",
   faq_label:"FAQ",
@@ -237,7 +237,7 @@ sr: {
   about_label:"O nama", about_h2:"Pravljeno za kompanije koje žele više od generičkog rešenja",
   about_desc1:"Quadify Soft razvija softver koji rešava stvarne poslovne probleme, a ne samo interfejse koji lepo izgledaju bez stvarne vrednosti.",
   about_desc2:"Naš cilj je da gradimo sisteme koji donose strukturu, brzinu, jasnoću i dugoročnu vrednost timovima i operacijama. Razmišljamo kroz poslovne ishode, ne kroz liste funkcionalnosti.",
-  anum_1:"Fokus", anum_2:"Pokretano", anum_3:"Skalabilno",
+  anum_1:"Fokus", anum_2:"Pokretano", anum_3:"Spremno",
   about_p1_title:"Ozbiljan pristup", about_p1_desc:"Gradimo sa dugoročnom stabilnošću, jasnom strukturom i poslovnom logikom iza svake odluke.",
   about_p2_title:"Poslovno razmišljanje", about_p2_desc:"Svaka funkcionalnost treba da ima svrhu, merljivu vrednost i praktičnu primenu. Ništa ne postoji samo da bi lepo izgledalo.",
   about_p3_title:"Moderna izvedba", about_p3_desc:"Čist UX, skalabilna arhitektura i dovoljno prostora za budući rast bez tehničkog duga.",
@@ -266,7 +266,7 @@ sr: {
   form_service_opt2:"AI sistemi", form_service_opt3:"Cloud platforme",
   form_service_opt4:"Ostalo / Konsultacije",
   form_message_l:"Poruka", form_message_ph:"Recite nam nešto o projektu, ciljevima i rokovima...",
-  form_success:"Primili smo vaš upit. Javićemo vam se u najkraćem roku.",
+  form_success:"Primili smo vaš upit. Javićemo vam se uskoro.",
   form_autoresponse:"Hvala što ste kontaktirali Quadify Soft.\n\nPrimili smo vaš upit za projekat i pažljivo ćemo ga pregledati. Ako je zahtev dobar fit za naš način rada, javićemo vam se u najkraćem roku sa predlogom narednih koraka.\n\nSrdačno,\nQuadify Soft",
   form_error:"Slanje poruke nije uspelo. Pišite na office@quadifysoft.rs ili pozovite +381 60 311 5955.",
   faq_label:"FAQ",
@@ -712,6 +712,20 @@ async function handleSubmit(e) {
   if (formLang) formLang.value = lang;
   const success = document.getElementById('cfSuccess');
   const submitBtn = form.querySelector('button[type="submit"]');
+  const showFormMessage = (message, isError = false) => {
+    if (!success) return;
+    window.clearTimeout(showFormMessage.hideTimer);
+    success.classList.toggle('error', isError);
+    success.classList.add('is-visible');
+    success.textContent = message;
+    success.scrollIntoView({
+      block: 'nearest',
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    });
+    showFormMessage.hideTimer = window.setTimeout(() => {
+      success.classList.remove('is-visible');
+    }, 9000);
+  };
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.setAttribute('aria-busy', 'true');
@@ -738,20 +752,12 @@ async function handleSubmit(e) {
     if (!response.ok || !result.ok) {
       throw new Error(result.error || 'Message sending failed');
     }
-    if (success) {
-      success.classList.remove('error');
-      success.classList.add('is-visible');
-      success.textContent = T[lang].form_success;
-      setTimeout(() => { success.classList.remove('is-visible'); }, 9000);
-    }
+    showFormMessage(T[lang].form_success, false);
     form.reset();
     if (formLang) formLang.value = lang;
   } catch (error) {
     console.error(error);
-    if (success) {
-      success.classList.add('error', 'is-visible');
-      success.textContent = T[lang].form_error;
-    }
+    showFormMessage(T[lang].form_error, true);
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;
